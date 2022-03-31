@@ -126,7 +126,7 @@
                             <li><a href="#">Western itemes</a></li>
                             <li><a href="#">Oriental items</a></li>
                             <li><a href="#">Single items</a></li>
-    
+
                         </ul>
                     </div>
                 </div>
@@ -189,10 +189,10 @@
                                 <li><a href="#">Tarts</a></li>
                                 <li><a href="#">icecream</a></li>
                                 <li><a href="#">Fresh Berries</a></li>
-                                
+
                             </ul>
                         </div>
-                    
+
                         <div class="sidebar__item">
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
@@ -358,8 +358,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                               
+
+
                             </div>
                         </div>
                     </div>
@@ -374,7 +374,20 @@
                         </div>
                     </div>
                     <div class="row">
+                      <?php
+                      $db_conn=mysqli_connect("localhost","root","","daken");
+                       if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
+                       $result=$db_conn->query("SELECT* FROM products");
+                       $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+                       for($i=0;$i<count($records_array);$i++){
+                        $product_id=$records_array[$i]["productId"];
+                        $product_name=$records_array[$i]["name"];
+                        $product_desc=$records_array[$i]["description"];
+                        $product_price=$records_array[$i]["price"];
+                        $product_category=$records_array[$i]["category"];
+                        echo '
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/pic6.JPG">
@@ -384,43 +397,18 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">cake</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="#">'.$product_name.'</a></h6>
+                                    <h5>$'.$product_price.'</h5>
                                 </div>
                             </div>
-                        </div>
-                        <!--        -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/pic7.JPG">
-                                    <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">basboosa</a></h6>
-                                    <h5>$40.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!--        -->
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/pic8.JPG">
-                                    <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">konafa</a></h6>
-                                    <h5>$50.00</h5>
-                                </div>
-                            </div>
-                        </div>
+                        </div>';
+                       }
+                      ?>
+
+                       
+
                     </div>
-                   
+
                 </div>
             </div>
         </div>
