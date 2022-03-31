@@ -1,6 +1,5 @@
 
 html,
-$purple:"#951B80";
 body {
 
 	height: 100%;
@@ -420,7 +419,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: #purple;
+	color: purple;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -2729,7 +2728,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: purple;
 }
 
 .contact__widget h4 {
