@@ -387,10 +387,12 @@
                         $product_desc=$records_array[$i]["description"];
                         $product_price=$records_array[$i]["price"];
                         $product_category=$records_array[$i]["category"];
+                        $group_image=$records_array[$i]["productsImage"];
+                        $image_path="img/".$group_image;
                         echo '
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/pic6.JPG">
+                                <div class="product__item__pic set-bg" data-setbg="'.$image_path.'">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
