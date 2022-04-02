@@ -1,6 +1,8 @@
 
 html,
+$purple:"#951B80";
 body {
+
 	height: 100%;
 	font-family: "Cairo", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -14,7 +16,7 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	color: #111111;
+	color: purple;
 	font-weight: 400;
 	font-family: "Cairo", sans-serif;
 }
@@ -98,7 +100,7 @@ ol {
 	right: 0;
 	height: 4px;
 	width: 80px;
-	background: #ec10aaef;
+	background: purple;
 	content: "";
 	margin: 0 auto;
 }
@@ -136,7 +138,7 @@ ol {
 	color: #ffffff;
 	text-transform: uppercase;
 	font-weight: 700;
-	background: #7fad39;
+	background: purple;
 	letter-spacing: 2px;
 }
 
@@ -147,7 +149,7 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 13px 30px 12px;
-	background: #7fad39;
+	background: purple;
 	border: none;
 }
 
@@ -220,7 +222,7 @@ ol {
 -----------------------*/
 
 .header__top {
-	background: #951B80;
+	background: purple;
 }
 
 .header__top__left {
@@ -418,7 +420,7 @@ ol {
 }
 
 .header__menu ul li .header__menu__dropdown li:hover>a {
-	color: #7fad39;
+	color: purple;
 }
 
 .header__menu ul li .header__menu__dropdown li a {
@@ -429,7 +431,7 @@ ol {
 }
 
 .header__menu ul li.active a {
-	color: #7fad39;
+	color: purple;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -439,7 +441,7 @@ ol {
 }
 
 .header__menu ul li:hover>a {
-	color: #7fad39;
+	color: purple;
 }
 
 .header__menu ul li:last-child {
@@ -493,7 +495,7 @@ ol {
 .header__cart ul li a span {
 	height: 13px;
 	width: 13px;
-	background: #7fad39;
+	background: purple;
 	font-size: 10px;
 	color: #ffffff;
 	line-height: 13px;
@@ -556,7 +558,7 @@ ol {
 }
 
 .hero__categories__all {
-	background: #951B80;
+	background: purple;
 	position: relative;
 	padding: 10px 25px 10px 40px;
 	cursor: pointer;
@@ -564,7 +566,7 @@ ol {
 
 .hero__categories__all i {
 	font-size: 16px;
-	color: #951B80;
+	color: purple;
 	margin-right: 10px;
 }
 
@@ -669,7 +671,7 @@ ol {
 
 .hero__search__phone__icon {
 	font-size: 18px;
-	color: #7fad39;
+	color: purple;
 	height: 50px;
 	width: 50px;
 	background: #f5f5f5;
@@ -707,7 +709,7 @@ ol {
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 4px;
-	color: #7fad39;
+	color: purple;
 }
 
 .hero__text h2 {
@@ -809,7 +811,7 @@ ol {
 	bottom: -2px;
 	width: 100%;
 	height: 2px;
-	background: #7fad39;
+	background: purple;
 	content: "";
 	opacity: 0;
 }
@@ -857,8 +859,8 @@ ol {
 }
 
 .featured__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: purple;
+	border-color: purple;
 }
 
 .featured__item__pic__hover li:hover a i {
@@ -1170,7 +1172,7 @@ ol {
 }
 
 .sidebar__item__color.sidebar__item__color--green label:after {
-	background: #3CC032;
+	background: purple;
 }
 
 .sidebar__item__color label {
@@ -1293,8 +1295,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: purple;
+	border-color: purple;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1492,7 +1494,7 @@ ol {
 }
 
 .filter__option span:hover {
-	color: #7fad39;
+	color: purple;
 }
 
 .product__item {
@@ -1533,8 +1535,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: purple;
+	border-color: purple;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1614,8 +1616,8 @@ ol {
 
 .product__pagination a:hover,
 .blog__pagination a:hover {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: purple;
+	border-color: purple;
 	color: #ffffff;
 }
 
@@ -2046,14 +2048,14 @@ ol {
 	color: #999999;
 	text-align: center;
 	background: #f5f5f5;
-	border-top: 1px solid #6AB963;
+	border-top: 1px solid purple;
 	padding: 12px 0 12px;
 	margin-bottom: 75px;
 }
 
 .checkout h6 span {
 	font-size: 16px;
-	color: #6AB963;
+	color: purple;
 	margin-right: 5px;
 }
 
@@ -2123,8 +2125,8 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: purple;
+	border-color: purple;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2351,7 +2353,7 @@ ol {
 }
 
 .blog__sidebar__item ul li a:hover {
-	color: #7fad39;
+	color: purple;
 }
 
 .blog__sidebar__search {
@@ -2571,7 +2573,7 @@ ol {
 }
 
 .blog__details__widget .blog__details__social a:hover {
-	color: #7fad39;
+	color: purple;
 }
 
 .blog__details__widget .blog__details__social a:last-child {
@@ -2689,7 +2691,7 @@ ol {
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #7fad39;
+	background: purple;
 	color: #ffffff;
 	border-color: #ffffff;
 }
@@ -2727,7 +2729,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: purple;
 }
 
 .contact__widget h4 {
@@ -2766,7 +2768,7 @@ ol {
 
 .map .map-inside i {
 	font-size: 48px;
-	color: #7fad39;
+	color: purple;
 	position: absolute;
 	bottom: -75px;
 	left: 50%;
@@ -3023,7 +3025,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: purple;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -3089,7 +3091,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: purple;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
@@ -3281,7 +3283,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: purple;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -3347,7 +3349,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: purple;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
