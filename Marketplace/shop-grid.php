@@ -556,7 +556,9 @@
                                         $group_image=$records_array[$i]["productsImage"];
                                         $image_path="img/".$group_image;
 
-                                        $offer_int=0;
+                                        $offer_int=intval(substr($product_offerratio,0,2));
+                                        $temp=$product_price*($offer_int/100);
+                                        $newPrice=$product_price-$temp;
                                         echo'
                                         <div class="col-lg-4">
                                         <div class="product__discount__item">
@@ -571,7 +573,7 @@
                                             <div class="product__discount__item__text">
                                                 <span>'.$product_category.'</span>
                                                 <h5><a href="#">'.$product_name.'</a></h5>
-                                                <div class="product__item__price">$20.00 <span>$'.$product_price.'</span></div>
+                                                <div class="product__item__price">$'.$newPrice.' <span>$'.$product_price.'</span></div>
                                             </div>
                                         </div>
                                     </div>';
