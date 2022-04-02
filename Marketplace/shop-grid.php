@@ -33,94 +33,6 @@
         <div class="loader"></div>
     </div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD:Marketplace/shop-grid.html
-   <!-- Humberger Begin -->
- <div class="humberger__menu__overlay"></div>
- <div class="humberger__menu__wrapper">
-     <div class="humberger__menu__logo">
-         <a href="#"><img src="img/logo.png" alt=""></a>
-     </div>
-     <div class="humberger__menu__cart">
-         <ul>
-             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-         </ul>
-         <div class="header__cart__price">item: <span>$150.00</span></div>
-     </div>
-     <div class="humberger__menu__widget">
-         <div class="header__top__right__language">
-             <img src="img/language.png" alt="">
-             <div>English</div>
-             <span class="arrow_carrot-down"></span>
-             <ul>
-                 <li><a href="#">English</a></li>
-             </ul>
-         </div>
-         <div class="header__top__right__auth">
-             <a href="#"><i class="fa fa-user"></i> Login</a>
-         </div>
-     </div>
-     <nav class="humberger__menu__nav mobile-menu">
-         <ul>
-             <li class="active"><a href="./index.html">Home</a></li>
-             <li><a href="./shop-grid.html">Shop</a></li>
-             <li><a href="#">Pages</a>
-                 <ul class="header__menu__dropdown">
-                     <li><a href="./shop-details.html">Shop Details</a></li>
-                     <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                     <li><a href="./checkout.html">Check Out</a></li>
-                 </ul>
-             </li>
-             <li><a href="./contact.html">Contact</a></li>
-         </ul>
-     </nav>
-     <div id="mobile-menu-wrap"></div>
-     <div class="header__top__right__social">
-         <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
-          <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
-     </div>
-     <div class="humberger__menu__contact">
-         <ul>
-             <li><i class="fa fa-envelope"></i> DakenEG@outlook.com</li>
-             
-         </ul>
-     </div>
- </div>
- <!-- Humberger End -->
-
- <!-- Header Section Begin -->
- <header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="header__top__left">
-                        <ul>
-                            <li><i class="fa fa-envelope"></i> DakenEG@outlook.com </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="header__top__right">
-                        <div class="header__top__right__social">
-                            <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
-                            <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
-                        </div>
-                        <div class="header__top__right__language">
-                            <img src="img/language.png" alt="">
-                            <div>English</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">English</a></li>
-                            </ul>
-                        </div>
-                        <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
-=======
-=======
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
     <!-- Humberger Begin -->
 
     <!-- Humberger End -->
@@ -155,26 +67,11 @@
                             <div class="header__top__right__auth">
                                 <a href="#"><i class="fa fa-user"></i> Login</a>
                             </div>
-<<<<<<< HEAD
->>>>>>> 12f6e9bf8cd1f1f8ae41d8fb85fe521dd928bfc2:Marketplace/shop-grid.php
-=======
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD:Marketplace/shop-grid.html
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="header__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
-=======
-=======
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -206,48 +103,6 @@
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
-<<<<<<< HEAD
->>>>>>> 12f6e9bf8cd1f1f8ae41d8fb85fe521dd928bfc2:Marketplace/shop-grid.php
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <nav class="header__menu">
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-3">
-                <div class="header__cart">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                    </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
-                </div>
-            </div>
-        </div>
-<<<<<<< HEAD:Marketplace/shop-grid.html
-        <div class="humberger__open">
-            <i class="fa fa-bars"></i>
-        </div>
-    </div>
-</header>
-<!-- Header Section End -->
-=======
-    </header>
-   <!-- Header Section End -->
->>>>>>> 12f6e9bf8cd1f1f8ae41d8fb85fe521dd928bfc2:Marketplace/shop-grid.php
-=======
                 </div>
             </div>
             <div class="humberger__open">
@@ -256,7 +111,6 @@
         </div>
     </header>
    <!-- Header Section End -->
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
 
     <!-- Hero Section Begin -->
     <section class="hero hero-normal">
@@ -342,66 +196,6 @@
                         <div class="sidebar__item">
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
-<<<<<<< HEAD
-                                <div class="latest-product__slider owl-carousel">
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-1.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-2.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-3.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="latest-prdouct__slider__item">
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-1.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-2.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="latest-product__item">
-                                            <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-3.jpg" alt="">
-                                            </div>
-                                            <div class="latest-product__item__text">
-                                                <h6>Crab Pool Security</h6>
-                                                <span>$30.00</span>
-                                            </div>
-                                        </a>
-=======
 
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
@@ -431,7 +225,6 @@
                                             ';
                                         }
                                             ?>
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
                                     </div>
                                 </div>
                             </div>
@@ -447,99 +240,6 @@
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 <!--   EACH PRODUCT ON SALE IS IN A DIV   -->
-<<<<<<< HEAD
-                                <div class="col-lg-4">
-                                    <div class="product__discount__item">
-                                        <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/pic1.JPG">
-                                            <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li> <!-- link for wishlist -->
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li> <!-- link for cart -->
-                                            </ul>
-                                        </div>
-                                        <div class="product__discount__item__text">
-                                            <span>cake</span>
-                                            <h5><a href="#">black chocolate</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--        ---------------------     -->
-                                <div class="col-lg-4">
-                                    <div class="product__discount__item">
-                                        <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/pic2.JPG">
-                                            <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__discount__item__text">
-                                            <span>cake</span>
-                                            <h5><a href="#">white chocolate</a></h5>
-                                            <div class="product__item__price">$20.00 <span>$26.00</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--        ---------------------     -->
-                                <div class="col-lg-4">
-                                    <div class="product__discount__item">
-                                        <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/pic3.JPG">
-                                            <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__discount__item__text">
-                                            <span>cake</span>
-                                            <h5><a href="#">mix</a></h5>
-                                            <div class="product__item__price">$40.00 <span>$45.00</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--        ---------------------     -->
-                                <div class="col-lg-4">
-                                    <div class="product__discount__item">
-                                        <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/pic4.JPG">
-                                            <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__discount__item__text">
-                                            <span>tart</span>
-                                            <h5><a href="#">strawberry</a></h5>
-                                            <div class="product__item__price">$10.00 <span>$20.00</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--        ---------------------     -->
-                                <div class="col-lg-4">
-                                    <div class="product__discount__item">
-                                        <div class="product__discount__item__pic set-bg"
-                                            data-setbg="img/pic5.JPG">
-                                            <div class="product__discount__percent">-20%</div>
-                                            <ul class="product__item__pic__hover">
-                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product__discount__item__text">
-                                            <span>tart</span>
-                                            <h5><a href="#">fruits</a></h5>
-                                            <div class="product__item__price">$30.00 <span>$36.00</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-=======
                                 <?php
                                     $db_conn=mysqli_connect("localhost","root","","daken");
                                     if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
@@ -556,9 +256,7 @@
                                         $group_image=$records_array[$i]["productsImage"];
                                         $image_path="img/".$group_image;
 
-                                        $offer_int=intval(substr($product_offerratio,0,2));
-                                        $temp=$product_price*($offer_int/100);
-                                        $newPrice=$product_price-$temp;
+                                        $offer_int=0;
                                         echo'
                                         <div class="col-lg-4">
                                         <div class="product__discount__item">
@@ -573,13 +271,12 @@
                                             <div class="product__discount__item__text">
                                                 <span>'.$product_category.'</span>
                                                 <h5><a href="#">'.$product_name.'</a></h5>
-                                                <div class="product__item__price">$'.$newPrice.' <span>$'.$product_price.'</span></div>
+                                                <div class="product__item__price">$20.00 <span>$'.$product_price.'</span></div>
                                             </div>
                                         </div>
                                     </div>';
                                 }
                                         ?>
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
                             </div>
                         </div>
                     </div>
@@ -637,19 +334,6 @@
     </section>
     <!-- Product Section End -->
 
-<<<<<<< HEAD
-<<<<<<< HEAD:Marketplace/shop-grid.html
- <!-- Footer Section Begin -->
- <footer class="footer spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="footer__about">
-                    <div class="footer__about__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-=======
-=======
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
     <!-- Footer Section Begin -->
     <footer class="footer spad">
         <div class="container">
@@ -664,52 +348,6 @@
                             <li>Phone: 01050070076</li>
                             <li>Email: DakenEG@outlook.com</li>
                         </ul>
-<<<<<<< HEAD
->>>>>>> 12f6e9bf8cd1f1f8ae41d8fb85fe521dd928bfc2:Marketplace/shop-grid.php
-                    </div>
-                    <ul>
-                        <li>Address: 5 شارع محمد المهدي متفرع من نبيل الوقاد ارض الجولف , القاهره</li>
-                        <li>Phone: 01050070076</li>
-                        <li>Email: DakenEG@outlook.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                <div class="footer__widget">
-                    <h6>Useful Links</h6>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">About Our Shop</a></li>
-                        <li><a href="#">Secure Shopping</a></li>
-                        <li><a href="#">Delivery infomation</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Our Sitemap</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Who We Are</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Innovation</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                    </ul>
-                </div>
-<<<<<<< HEAD:Marketplace/shop-grid.html
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="footer__widget">
-                    <h6>Join Our Newsletter Now</h6>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Enter your mail">
-                        <button type="submit" class="site-btn">Subscribe</button>
-                    </form>
-                    <div class="footer__widget__social">
-                        <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
-                        <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
-                  </div>
-=======
-=======
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
@@ -733,7 +371,6 @@
                         </ul>
                     </div>
                 </div>
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
                         <h6>Join Our Newsletter Now</h6>
@@ -747,25 +384,6 @@
                             <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
                       </div>
                     </div>
-<<<<<<< HEAD
->>>>>>> 12f6e9bf8cd1f1f8ae41d8fb85fe521dd928bfc2:Marketplace/shop-grid.php
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer__copyright">
-                    <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                    <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer Section End -->
-=======
                 </div>
             </div>
             <div class="row">
@@ -781,7 +399,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- Footer Section End -->
->>>>>>> 5bf3c00e9ec045b3351555e9dff8d3dc531dd4bd
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
