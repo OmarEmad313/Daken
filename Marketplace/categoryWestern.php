@@ -29,7 +29,8 @@
         <div class="loader"></div>
     </div>
 
-  
+
+ 
   <!-- Header Section Begin -->
   <header class="header">
      <div class="header__top">
@@ -90,9 +91,9 @@
              </div>
              <div class="col-lg-3">
                  <div class="header__cart">
-                     <ul> 
-                         <!--  <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-                        <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                     <ul>
+<!--                          <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+ -->                         <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                      </ul>
                      <div class="header__cart__price">item: <span>$150.00</span></div>
                  </div>
@@ -150,98 +151,87 @@
          </div>
      </section>
      <!-- Hero Section End -->
-
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Checkout</h2>
+                        <h2>Shopping Cart</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
-                            <span>Checkout</span>
+                            <span>Shopping Cart</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
+   
+    
+      <!-- western category Section Begin -->
+      <h2>Western Items</h2>
 
-    <!-- Checkout Section Begin -->
-    <section class="checkout spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h6><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click here</a> to enter your code
-                    </h6>
-                </div>
-            </div>
-            <div class="checkout__form">
-                <h4>Billing Details</h4>
-                <form action="#">
+      <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col-lg-8 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Fist Name<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Last Name<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                            </div>
+                      <?php
+                      $db_conn=mysqli_connect("localhost","root","","daken");
+                       if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Phone<span>*</span></p>
-                                        <input type="text">
-                                    </div>
+                       $result=$db_conn->query("SELECT* FROM products where category='cake'");
+                       $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
+                        $productNo=0;
+                       for($i=0;$i<count($records_array);$i++){
+                        $productNo+=1;
+                        $product_id=$records_array[$i]["productId"];
+                        $product_name=$records_array[$i]["name"];
+                        $product_desc=$records_array[$i]["description"];
+                        $product_price=$records_array[$i]["price"];
+                        $product_category=$records_array[$i]["category"];
+                        $group_image=$records_array[$i]["productsImage"];
+                        $image_path="img/".$group_image;
+                        echo '
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="'.$image_path.'">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Email<span>*</span></p>
-                                        <input type="text">
-                                    </div>
+                                <div class="product__item__text">
+                                    <h6><a href="#">'.$product_name.'</a></h6>
+                                    <h5>$'.$product_price.'</h5>
                                 </div>
                             </div>
-                        
-                            <div class="checkout__input">
-                                <p>Order notes<span>*</span></p>
-                                <input type="text"
-                                    placeholder="Notes about your order, e.g. special notes for delivery.">
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="checkout__order">
-                                <h4>Your Order</h4>
-                                <div class="checkout__order__products">Products <span>Total</span></div>
-                                <ul>
-                                    <li>molten cake <span>$75.99</span></li>
-                                    <li>cheese cake <span>$151.99</span></li>
-                                    <li>carrot cake <span>$53.99</span></li>
-                                </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
-                                <div class="checkout__order__total">Total <span>$750.99</span></div>
-                               
-                                <button type="submit" class="site-btn">PLACE RESERVATION</button>
+                        </div>';
+                       }
+                      ?>
+                    </div>
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span><?php echo $productNo ;?></span> Products found</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+
+                </div>
             </div>
         </div>
-    </section>
-    <!-- Checkout Section End -->
 
- <!-- Footer Section Begin -->
+      <!--  western category  Section End -->
+      
+      <!-- Footer Section Begin -->
  <footer class="footer spad">
     <div class="container">
         <div class="row">
@@ -299,7 +289,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
- 
 
 </body>
 

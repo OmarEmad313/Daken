@@ -33,10 +33,6 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Humberger Begin -->
-
-    <!-- Humberger End -->
-<!-- -------------------------------------------------------------------------------------------------- -->
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
@@ -83,7 +79,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="./shop-grid.php">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
@@ -98,8 +94,8 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+<!--                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+ -->                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -123,9 +119,9 @@
                             <span>Categories</span>
                         </div>
                         <ul>
-                            <li><a href="#">Western itemes</a></li>
-                            <li><a href="#">Oriental items</a></li>
-                            <li><a href="#">Single items</a></li>
+                            <li><a href="./categoryWestern.php">Western itemes</a></li>
+                            <li><a href="./categoryOriental.php">Oriental items</a></li>
+                            <li><a href="./categorySingle.php">Single items</a></li>
 
                         </ul>
                     </div>
@@ -157,24 +153,7 @@
         </div>
     </section>
     <!-- Hero Section End -->
-<!-- ------------------------------------------------------------------------------------------ -->
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Products</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Shop</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+
 <!-- --------------------------------(SIDE PART)------------------------------------------------------------- -->
     <!-- Product Section Begin -->
     <section class="product spad">
@@ -185,10 +164,10 @@
                         <div class="sidebar__item">
                             <h4>Department</h4>
                             <ul>
-                                <li><a href="#">Cakes</a></li>
-                                <li><a href="#">Tarts</a></li>
-                                <li><a href="#">icecream</a></li>
-                                <li><a href="#">Fresh Berries</a></li>
+                                
+                            <li><a href="./categoryWestern.php">Western itemes</a></li>
+                            <li><a href="./categoryOriental.php">Oriental items</a></li>
+                            <li><a href="./categorySingle.php">Single items</a></li>
 
                             </ul>
                         </div>
@@ -280,12 +259,29 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Breadcrumb Section Begin -->
+                    <section class="breadcrumb-section set-bg" data-setbg="img/pic7.JPG">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="breadcrumb__text">
+                                        <h2>Products</h2>
+                                        <div class="breadcrumb__option">
+                                            <a href="./index.html">Home</a>
+                                            <span>Shop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Breadcrumb Section End -->
                     <!--   ----------(REST OF THE PRODUCTS)-------------------   -->
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>3</span> Products found</h6>
+                                    <h6><span>Welcome to our store</span> </h6>
                                 </div>
                             </div>
                         </div>
@@ -297,8 +293,9 @@
 
                        $result=$db_conn->query("SELECT* FROM products");
                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
-
+                        $productNo=0;
                        for($i=0;$i<count($records_array);$i++){
+                           $productNo+=1;
                         $product_id=$records_array[$i]["productId"];
                         $product_name=$records_array[$i]["name"];
                         $product_desc=$records_array[$i]["description"];
@@ -323,9 +320,16 @@
                         </div>';
                        }
                       ?>
-
-                       
-
+                    </div>
+                    
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span><?php echo $productNo ;?></span> Products found</h6>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -336,69 +340,51 @@
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li>Address: 5 شارع محمد المهدي متفرع من نبيل الوقاد ارض الجولف , القاهره</li>
-                            <li>Phone: 01050070076</li>
-                            <li>Email: DakenEG@outlook.com</li>
-                        </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__about__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
-                            <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
-                      </div>
-                    </div>
+                    <ul>
+                        <li>Address: 5 شارع محمد المهدي متفرع من نبيل الوقاد ارض الجولف , القاهره</li>
+                        <li>Phone: 01050070076</li>
+                        <li>Email: DakenEG@outlook.com</li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer__copyright">
-                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
-                    </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="footer__widget">
+                    <h6>Useful Links</h6>
+                    <ul>
+                        <li><a href="./aboutus.html">About Us</a></li>
+                        <li><a href="./aboutOurShop.html">About Our Shop</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./contact.html">Our location</a></li>
+                    </ul>
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="footer__widget">
+                    <h6>Join Our community Now</h6>
+                    <p>Get E-mail updates about our latest shop and special offers.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Enter your mail">
+                        <button type="submit" class="site-btn">Subscribe</button>
+                    </form>
+                    <div class="footer__widget__social">
+                        <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
+                        <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
+                  </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
+     
+    </div>
+</footer>
+<!-- Footer Section End -->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
