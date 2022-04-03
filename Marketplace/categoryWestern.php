@@ -77,7 +77,7 @@
                  <nav class="header__menu">
                      <ul>
                          <li><a href="./index.html">Home</a></li>
-                         <li><a href="./shop-grid.html">Shop</a></li>
+                         <li><a href="./shop-grid.php">Shop</a></li>
                          <li><a href="#">Pages</a>
                              <ul class="header__menu__dropdown">
                                  <li><a href="./shop-details.html">Shop Details</a></li>
@@ -117,9 +117,9 @@
                              <span>Categories</span>
                          </div>
                          <ul>
-                             <li><a href="#">Western itemes</a></li>
-                             <li><a href="#">Oriental items</a></li>
-                             <li><a href="#">Single items</a></li>
+                            <li><a href="./categoryWestern.php">Western itemes</a></li>
+                            <li><a href="./categoryOriental.php">Oriental items</a></li>
+                            <li><a href="./categorySingle.php">Single items</a></li>
  
                          </ul>
                      </div>
@@ -169,14 +169,13 @@
     </section>
    
     
-      <!-- aboutOurShop Section Begin -->
+      <!-- western category Section Begin -->
       <h2>Western Items</h2>
 
       <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>3</span> Products found</h6>
                                 </div>
                             </div>
                         </div>
@@ -188,8 +187,9 @@
 
                        $result=$db_conn->query("SELECT* FROM products where category='cake'");
                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
-
+                        $productNo=0;
                        for($i=0;$i<count($records_array);$i++){
+                        $productNo+=1;
                         $product_id=$records_array[$i]["productId"];
                         $product_name=$records_array[$i]["name"];
                         $product_desc=$records_array[$i]["description"];
@@ -214,16 +214,23 @@
                         </div>';
                        }
                       ?>
-
-                       
-
+                    </div>
+                    <div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span><?php echo $productNo ;?></span> Products found</h6>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
 
-      <!--  aboutOurShop Section End -->
+      <!--  western category  Section End -->
+      
       <!-- Footer Section Begin -->
  <footer class="footer spad">
     <div class="container">

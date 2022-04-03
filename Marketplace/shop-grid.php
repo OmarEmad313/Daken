@@ -79,7 +79,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="./shop-grid.php">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./shop-details.html">Shop Details</a></li>
@@ -153,24 +153,7 @@
         </div>
     </section>
     <!-- Hero Section End -->
-<!-- ------------------------------------------------------------------------------------------ -->
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="breadcrumb__text">
-                        <h2>Products</h2>
-                        <div class="breadcrumb__option">
-                            <a href="./index.html">Home</a>
-                            <span>Shop</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+
 <!-- --------------------------------(SIDE PART)------------------------------------------------------------- -->
     <!-- Product Section Begin -->
     <section class="product spad">
@@ -181,10 +164,10 @@
                         <div class="sidebar__item">
                             <h4>Department</h4>
                             <ul>
-                                <li><a href="#">Cakes</a></li>
-                                <li><a href="#">Tarts</a></li>
-                                <li><a href="#">icecream</a></li>
-                                <li><a href="#">Fresh Berries</a></li>
+                                
+                            <li><a href="./categoryWestern.php">Western itemes</a></li>
+                            <li><a href="./categoryOriental.php">Oriental items</a></li>
+                            <li><a href="./categorySingle.php">Single items</a></li>
 
                             </ul>
                         </div>
@@ -276,12 +259,29 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Breadcrumb Section Begin -->
+                    <section class="breadcrumb-section set-bg" data-setbg="img/pic7.JPG">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <div class="breadcrumb__text">
+                                        <h2>Products</h2>
+                                        <div class="breadcrumb__option">
+                                            <a href="./index.html">Home</a>
+                                            <span>Shop</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Breadcrumb Section End -->
                     <!--   ----------(REST OF THE PRODUCTS)-------------------   -->
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>Our Products</span> </h6>
+                                    <h6><span>Welcome to our store</span> </h6>
                                 </div>
                             </div>
                         </div>
@@ -293,8 +293,9 @@
 
                        $result=$db_conn->query("SELECT* FROM products");
                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
-
+                        $productNo=0;
                        for($i=0;$i<count($records_array);$i++){
+                           $productNo+=1;
                         $product_id=$records_array[$i]["productId"];
                         $product_name=$records_array[$i]["name"];
                         $product_desc=$records_array[$i]["description"];
@@ -319,17 +320,16 @@
                         </div>';
                        }
                       ?>
-
-<div class="filter__item">
+                    </div>
+                    
+                    <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span><?php echo $productNu ;?></span> Products found</h6>
+                                    <h6><span><?php echo $productNo ;?></span> Products found</h6>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
                     </div>
 
                 </div>
