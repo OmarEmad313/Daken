@@ -281,7 +281,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span>3</span> Products found</h6>
+                                    <h6><span>Our Products</span> </h6>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +320,15 @@
                        }
                       ?>
 
-                       
+<div class="filter__item">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="filter__found">
+                                    <h6><span><?php echo $productNu ;?></span> Products found</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     </div>
 
