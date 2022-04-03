@@ -29,12 +29,9 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Humberger Begin -->
     
-    <!-- Humberger End -->
-
-    <!-- Header Section Begin -->
-    <header class="header">
+      <!-- Header Section Begin -->
+      <header class="header">
         <div class="header__top">
             <div class="container">
                 <div class="row">
@@ -42,7 +39,7 @@
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> DakenEG@outlook.com </li>
-
+    
                             </ul>
                         </div>
                     </div>
@@ -94,7 +91,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
+                         <!--   <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>  -->
                             <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
@@ -108,64 +105,62 @@
     </header>
     <!-- Header Section End -->
 
- <!-- Hero Section Begin -->
- <section class="hero hero-normal">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
-                        <i class="fa fa-bars"></i>
-                        <span>Categories</span>
-                    </div>
-                    <ul>
-                        <li><a href="./categoryWestern.php">Western itemes</a></li>
-                        <li><a href="./categoryOriental.php">Oriental items</a></li>
-                        <li><a href="./categorySingle.php">Single items</a></li>
-
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form action="#">
-                            <div class="hero__search__categories">
-                                All Categories
-                                <span class="arrow_carrot-down"></span>
-                            </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="hero__search__phone__text">
-                            <h5>01050070076</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Section End -->
-
+   <!-- Hero Section Begin -->
+      <section class="hero hero-normal">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3">
+                      <div class="hero__categories">
+                          <div class="hero__categories__all">
+                              <i class="fa fa-bars"></i>
+                              <span>Categories</span>
+                          </div>
+                          <ul>
+                              <li><a href="./categoryWestern.php">Western itemes</a></li>
+                              <li><a href="./categoryOriental.php">Oriental items</a></li>
+                              <li><a href="./categorySingle.php">Single items</a></li>
+  
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-9">
+                      <div class="hero__search">
+                          <div class="hero__search__form">
+                              <form action="#">
+                                  <div class="hero__search__categories">
+                                      All Categories
+                                      <span class="arrow_carrot-down"></span>
+                                  </div>
+                                  <input type="text" placeholder="What do yo u need?">
+                                  <button type="submit" class="site-btn">SEARCH</button>
+                              </form>
+                          </div>
+                          <div class="hero__search__phone">
+                              <div class="hero__search__phone__icon">
+                                  <i class="fa fa-phone"></i>
+                              </div>
+                              <div class="hero__search__phone__text">
+                                  <h5>01050070076</h5>
+                                  <span>support 24/7 time</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="img/pic10.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Contact Us</h2>
+                        <h2>More Information</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
-                            <span>Contact Us</span>
+                            <span>Our Products</span>
                         </div>
                     </div>
                 </div>
@@ -174,92 +169,84 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_phone"></span>
-                        <h4>Phone</h4>
-                        <p>01050070076</p>
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <?php
+                      $db_conn=mysqli_connect("localhost","root","","daken");
+                       if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
+
+                       $result=$db_conn->query("SELECT* FROM products");
+                       $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
+                        $productNo=0;
+                       for($i=0;$i<count($records_array);$i++){
+                           $productNo+=1;
+                        $product_id=$records_array[$i]["productId"];
+                        $product_name=$records_array[$i]["name"];
+                        $product_desc=$records_array[$i]["description"];
+                        $product_price=$records_array[$i]["price"];
+                        $product_category=$records_array[$i]["category"];
+                        $group_image=$records_array[$i]["productsImage"];
+                        $image_path="img/".$group_image;
+
+                        echo '
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="product__details__pic">
+                                    <div class="product__details__pic__item">
+                                        <img class="product__details__pic__item--large"
+                                            src="'.$image_path.'" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="product__details__text">
+                                    <h3>'.$product_name.'</h3>
+                                   <!--  <div class="product__details__rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                        <span>(18 reviews)</span>
+                                    </div> -->
+                                    <div class="product__details__price">$'.$product_price.'</div>
+                                    <p>'.$product_desc.'</p>
+                                  <!--   <div class="product__details__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <a href="" class="primary-btn">ADD TO CART</a>
+                                    <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                                    <ul>
+                                        <li><b>Availability</b> <span>In Stock</span></li>
+                                        <li><b>Category</b> <span>'.$product_category.'</span></li>
+                                        <li><b>Share on</b>
+                                            <div class="share">
+                                                <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
+                                                <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_pin_alt"></span>
-                        <h4>Address</h4>
-                        <p>5 شارع محمد المهدي متفرع من نبيل الوقاد ارض الجولف , القاهره</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_clock_alt"></span>
-                        <h4>Open time</h4>
-                        <p>10:00 am to 23:00 pm</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 text-center">
-                    <div class="contact__widget">
-                        <span class="icon_mail_alt"></span>
-                        <h4>Email</h4>
-                        <p>DakenEG@outlook.com</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        ';
+                       } ?>
+                       
+       
     </section>
-    <!-- Contact Section End -->
+    <!-- Product Details Section End -->
 
-    <!-- Map Begin -->
-    <div class="map">
-        <iframe
-            src="https://www.google.com/maps/dir/30.006115,31.4570441/30.0822987,31.3385315/@30.0498761,31.3394429,12.46z/data=!4m4!4m3!1m1!4e1!1m0"
-            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        <div class="map-inside">
-            <i class="icon_pin"></i>
-            <div class="inside-widget">
-                <h4>cairo</h4>
-                <ul>
-                    <li>Phone: 01050070076</li>
-                    <li>Address: 5 شارع محمد المهدي متفرع من نبيل الوقاد ارض الجولف , القاهره</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Map End -->
 
-    <!-- Contact Form Begin -->
-    <div class="contact-form spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact__form__title">
-                        <h2>Leave Message</h2>
-                    </div>
-                </div>
-            </div>
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your name">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your Email">
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <textarea placeholder="Your message"></textarea>
-                        <button type="submit" class="site-btn">SEND MESSAGE</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Contact Form End -->
-
- <!-- Footer Section Begin -->
- <footer class="footer spad">
+   <!-- Footer Section Begin -->
+   <footer class="footer spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -305,6 +292,7 @@
     </div>
 </footer>
 <!-- Footer Section End -->
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -314,7 +302,6 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
 
 
 </body>
