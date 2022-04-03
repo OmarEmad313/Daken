@@ -182,10 +182,10 @@
                     </div>
                     <div class="row">
                       <?php
-                      $db_conn=mysqli_connect("localhost","root","","daken");
+                      $db_conn=mysqli_connect("localhost","root","","dakennn");
                        if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
-                       $result=$db_conn->query("SELECT* FROM products where category='single'");
+                       $result=$db_conn->query("SELECT* FROM products where category='single items'");
                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
                         $productNo=0;
                        for($i=0;$i<count($records_array);$i++){
