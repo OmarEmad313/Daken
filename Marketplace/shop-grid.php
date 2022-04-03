@@ -125,7 +125,7 @@
 
                         </ul>
                     </div>
-                </div>
+                </div><!--  -->
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
@@ -143,6 +143,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="hero__search__phone__text">
+                                <!--  -->
                                 <h5>01050070076</h5>
                                 <span>support 24/7 time</span>
                             </div>
