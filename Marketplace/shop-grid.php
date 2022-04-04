@@ -180,7 +180,7 @@
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
                                          <?php
-                                        $db_conn=mysqli_connect("localhost","root","","dakennn");
+                                        $db_conn=mysqli_connect("localhost","root","","daken");
                                         if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                                         $result=$db_conn->query("SELECT* FROM products");
@@ -221,7 +221,7 @@
                             <div class="product__discount__slider owl-carousel">
                                 <!--   EACH PRODUCT ON SALE IS IN A DIV   -->
                                 <?php
-                                    $db_conn=mysqli_connect("localhost","root","","dakennn");
+                                    $db_conn=mysqli_connect("localhost","root","","daken");
                                     if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                                     $result=$db_conn->query("SELECT* FROM products,offers where products.productId=offers.productID");
@@ -235,9 +235,6 @@
                                         $product_category=$records_array[$i]["category"];
                                         $group_image=$records_array[$i]["productsImage"];
                                         $image_path="img/".$group_image;
-                                        $offer_int=intval(substr($product_offerratio,0,2));
-                                        $temp=$product_price*($offer_int/100);
-                                        $newPrice=$product_price-$temp;
 
                                         $offer_int=0;
                                         echo'
@@ -254,7 +251,7 @@
                                             <div class="product__discount__item__text">
                                                 <span>'.$product_category.'</span>
                                                 <h5><a href="#">'.$product_name.'</a></h5>
-                                                <div class="product__item__price">$'.$newPrice.'<span>$'.$product_price.'</span></div>
+                                                <div class="product__item__price">$20.00 <span>$'.$product_price.'</span></div>
                                             </div>
                                         </div>
                                     </div>';
@@ -292,7 +289,7 @@
                     </div>
                     <div class="row">
                       <?php
-                      $db_conn=mysqli_connect("localhost","root","","dakennn");
+                      $db_conn=mysqli_connect("localhost","root","","daken");
                        if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                        $result=$db_conn->query("SELECT* FROM products");
