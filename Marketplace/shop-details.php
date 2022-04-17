@@ -172,7 +172,7 @@
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
         <?php
-                      $db_conn=mysqli_connect("localhost","root","","daken");
+                      $db_conn=mysqli_connect("localhost","root","","dakennn");
                        if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                        $result=$db_conn->query("SELECT* FROM products");

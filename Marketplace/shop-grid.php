@@ -180,7 +180,7 @@
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
                                          <?php
-                                        $db_conn=mysqli_connect("localhost","root","","daken");
+                                        $db_conn=mysqli_connect("localhost","root","","dakennn");
                                         if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                                         $result=$db_conn->query("SELECT* FROM products");
@@ -221,7 +221,7 @@
                             <div class="product__discount__slider owl-carousel">
                                 <!--   EACH PRODUCT ON SALE IS IN A DIV   -->
                                 <?php
-                                    $db_conn=mysqli_connect("localhost","root","","daken");
+                                    $db_conn=mysqli_connect("localhost","root","","dakennn");
                                     if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
                                     $result=$db_conn->query("SELECT* FROM products,offers where products.productId=offers.productID");
@@ -289,10 +289,10 @@
                     </div>
                     <div class="row">
                       <?php
-                      $db_conn=mysqli_connect("localhost","root","","daken");
+                      $db_conn=mysqli_connect("localhost","root","","dakennn");
                        if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
 
-                       $result=$db_conn->query("SELECT* FROM products");
+                       $result=$db_conn->query("SELECT* FROM products where fav=''");
                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
                         $productNo=0;
                        for($i=0;$i<count($records_array);$i++){
