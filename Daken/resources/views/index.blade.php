@@ -77,7 +77,7 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="./shop-grid.php">Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
@@ -86,7 +86,7 @@
                                 <li><a href="./checkout.html">Check Out</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="./contact.html">Contact</a></li>
+                        <li class="active"><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>

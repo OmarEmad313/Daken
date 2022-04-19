@@ -20,7 +20,14 @@ Route::get('/',[homeController::class,'index'] );
 
 Route::get('/contact',[homeController::class,'contact'] );
 
-Route::get('/shop/{category?}/{item?}', function ($category=null,$item=null) {
+Route::get('/shop',[homeController::class,'shop'] );
+
+Route::get('/aboutus',[homeController::class,'aboutus'] );
+
+Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] );
+
+
+/* Route::get('/shop/{category?}/{item?}', function ($category=null,$item=null) {
     if(isset($category)){
 
         if(isset($item)){
@@ -31,4 +38,4 @@ Route::get('/shop/{category?}/{item?}', function ($category=null,$item=null) {
     }
 
     return '<h2>All items</h2>';
-});
+}); */
