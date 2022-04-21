@@ -15,7 +15,7 @@ class homeController extends Controller
     }
 
     public function shop () {
-        return view('shop-grid');
+        return view('shop');
     }
 
     public function aboutus () {

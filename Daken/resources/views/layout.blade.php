@@ -134,13 +134,13 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="./shop-grid.php">Shop</a></li>
+                            <li><a href="{{ route('home.index') }}">Home</a></li>
+                            <li><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.php">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="{{ route('home.index') }}">Shop Details</a></li>
+                                    <li><a href="{{ route('home.index') }}">Shoping Cart</a></li>
+                                    <li><a href="{{ route('home.index') }}">Check Out</a></li>
                                 </ul>
                             </li>
                             <li class="active"><a href="/contact">Contact</a></li>
@@ -236,10 +236,10 @@
                 <div class="footer__widget">
                     <h6>Useful Links</h6>
                     <ul>
-                        <li><a href="/aboutus">About Us</a></li>
-                        <li><a href="/aboutOurShop">About Our Shop</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                        <li><a href="/contact">Our location</a></li>
+                        <li><a href="{{ route('home.aboutus') }}">About Us</a></li>
+                        <li><a href="{{ route('home.aboutOurShop') }}">About Our Shop</a></li>
+                        <li><a href="{{ route('home.contact') }}">Contact</a></li>
+                        <li><a href="{{ route('home.contact') }}">Our location</a></li>
                     </ul>
                    
                 </div>

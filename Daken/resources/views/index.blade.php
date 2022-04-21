@@ -154,19 +154,19 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="carousel-caption">
-                    <p>"I have enjoyed a tasty dessert while not crushing my diet"</p> <img src="https://i.imgur.com/lE89Aey.jpg">
+                    <p>"I have enjoyed a tasty dessert while not crushing my diet"</p> <img src="{{ url('img/konafa.gif')}}">
                     <div id="image-caption">Nick Doe</div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="carousel-caption">
-                    <p>"My go to place every weekends."</p> <img src="https://i.imgur.com/QptVdsp.jpg" class="img-fluid">
+                    <p>"My go to place every weekends."</p> <img src="{{ url('img/baklwa.jpg')}}" class="img-fluid">
                     <div id="image-caption">Cromption Greves</div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="carousel-caption">
-                    <p>"There desserts are really made with love and passion"</p> <img src="https://i.imgur.com/jQWThIn.jpg" class="img-fluid">
+                    <p>"There desserts are really made with love and passion"</p> <img src="{{ url('img/baklwa.jpg')}}" class="img-fluid">
                     <div id="image-caption">Harry Mon</div>
                 </div>
             </div>

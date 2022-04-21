@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\productController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +17,17 @@ use App\Http\Controllers\homeController;
 
 // The homepage or the first page
 //              The class we are going to use , name of the function
-Route::get('/',[homeController::class,'index'] );
+Route::get('/',[homeController::class,'index'] )->name('home.index');
 
-Route::get('/contact',[homeController::class,'contact'] );
+Route::get('/contact',[homeController::class,'contact'] )->name('home.contact');
 
-Route::get('/shop',[homeController::class,'shop'] );
+Route::get('/shop',[homeController::class,'shop'] )->name('home.shop');
 
-Route::get('/aboutus',[homeController::class,'aboutus'] );
+Route::get('/aboutus',[homeController::class,'aboutus'] )->name('home.aboutus');
 
-Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] );
+Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] )->name('home.aboutOurShop');
+
+Route::resource('products',productController::class);
 
 
 /* Route::get('/shop/{category?}/{item?}', function ($category=null,$item=null) {
