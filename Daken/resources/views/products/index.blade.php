@@ -26,12 +26,21 @@
 
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
-                                        
-                                        
+                                        <?php
+                                        $db_conn=mysqli_connect("localhost","root","","dakennn");
+
+                                        $result=$db_conn->query("SELECT* FROM products");
+                                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
+                                        $stopat=count($records_array)-4;
+                                        $i=count($records_array)-1;
+                                       
+                                        for($i;$i>$stopat;$i--)
+                                        {
+                                        ?>
                                            @foreach ($products as $product)
                                                 <a href="#" class="latest-product__item">
                                                 <div class="latest-product__item__pic">
-                                                    <img src="{{ $product['image_path'] }}" >
+                                                    <img src="{{ asset('/img/'.$product['productsImage'] ) }}" width="70px" height="70px" alt="Image" >
                                                 </div>
                                                 <div class="latest-product__item__text">
                                                     <h6>{{ $product['name'] }}</h6>
@@ -39,7 +48,7 @@
                                                 </div>
                                                 </a>
                                             @endforeach
-                                        
+                                       <?php } ?>
                                            
                                     </div>
                                 </div>
@@ -56,43 +65,25 @@
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 <!--   EACH PRODUCT ON SALE IS IN A DIV   -->
-                                <?php
-                                    $db_conn=mysqli_connect("localhost","root","","dakennn");
-                                    if(!$db_conn){ echo '<h5 style="color:red;margin-left:200px;">Could not Connect To Database</h5><br>';}
-
-                                    $result=$db_conn->query("SELECT* FROM products,offers where products.productId=offers.productID");
-                                    if(!$result){ echo '<h5 style="color:red;margin-left:200px;">NO RESULTS</h5><br>';}
-                                    $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
-                                    for($i=0;$i<count($records_array);$i++){
-                                        $product_id=$records_array[$i]["productId"];
-                                        $product_name=$records_array[$i]["name"];
-                                        $product_price=$records_array[$i]["price"];
-                                        $product_offerratio=$records_array[$i]["offerRatio"];
-                                        $product_category=$records_array[$i]["category"];
-                                        $group_image=$records_array[$i]["productsImage"];
-                                        $image_path="img/".$group_image;
-
-                                        $offer_int=0;
-                                        echo'
+                                @foreach ($products as $product)
                                         <div class="col-lg-4">
                                         <div class="product__discount__item">
                                             <div class="product__discount__item__pic set-bg"
-                                                data-setbg="'.$image_path.'">
-                                                <div class="product__discount__percent">-'.$product_offerratio.'</div>
+                                                data-setbg="{{ $product['image_path'] }}">
+                                                <div class="product__discount__percent">-{{ $product['$product_offerratio'] }}</div>
                                                 <ul class="product__item__pic__hover">
                                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
                                             <div class="product__discount__item__text">
-                                                <span>'.$product_category.'</span>
-                                                <h5><a href="#">'.$product_name.'</a></h5>
-                                                <div class="product__item__price">$20.00 <span>$'.$product_price.'</span></div>
+                                                <span>{{ $product['product_category'] }}</span>
+                                                <h5><a href="#">{{ $product['name'] }}</a></h5>
+                                                <div class="product__item__price">$20.00 <span>${{ $product['price'] }}</span></div>
                                             </div>
                                         </div>
-                                    </div>';
-                                }
-                                        ?>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -140,14 +131,14 @@
                                 </div>
                             </div>
                         </div>
-                      #endforeach
+                      @endforeach
                     </div>
                     
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <h6><span><?php echo $productNo ;?></span> Products found</h6>
+
                                 </div>
                             </div>
                         </div>
