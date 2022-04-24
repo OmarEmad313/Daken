@@ -86,6 +86,7 @@ class productController extends Controller
     public function show($id)
     {
         // get
+        return view('product.show');
     }
 
     /**
