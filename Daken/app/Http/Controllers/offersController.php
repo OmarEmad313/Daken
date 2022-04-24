@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\offers;
+use Illuminate\Support\Facades\DB;
 
 
 class offersController extends Controller
@@ -15,8 +16,14 @@ class offersController extends Controller
      */
     public function index()
     {
+        $offer=DB::table('offers')
+        ->join('products','offers.productId','=','products.productId')
+        ->select('offers.offerRatio as offerRatio','products.name as productName',
+        'products.price as productPrice','products.category as productCategory',
+        'products.productsImage as productImage')
+        ->get;
         return view('products.index',[
-            'offers' => offers::all(),  
+            'offers'=>$offer,
         ]);
     }
 

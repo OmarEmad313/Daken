@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\products;
+use Illuminate\Support\Facades\DB;
+
 
 class productController extends Controller
 {
@@ -16,8 +18,18 @@ class productController extends Controller
     public function index()
     {
         // Displaying all the products from database (get req)
+        $offer=DB::table('offers')
+        ->join('products','offers.productId','=','products.productId')
+        ->select('offers.offerRatio as offerRatio','products.name as productName',
+        'products.price as productPrice','products.category as productCategory',
+        'products.productsImage as productImage')
+        ->get();
+
+        $count1 = products::count();
         return view('products.index',[
             'products' => products::all(),  
+            'offers'=>$offer,
+            'count'=>$count1,
         ]);
     }
 
@@ -45,19 +57,24 @@ class productController extends Controller
             'product_description'=>'required',
             'product_price'=>['required','integer'],
             'category'=>'required',
-
+            'image'=>'required',
         ]);
 
         $product=new products();
-
+        //taking thr input from form
         $product->id=rand();
         $product->name=strip_tags($request->input('product_name'));
         $product->description=strip_tags($request->input('product_description'));
         $product->price=strip_tags($request->input('product_price'));
         $product->category=strip_tags($request->input('category'));
 
+        $photoName=$request->file('image')->getClientOriginalName();
+        $product->productImage=strip_tags($photoName);
+        $request->file('image')->store('public/img/',$photoName);
+
         $product->save();
-        return redirect()->route('anything');
+        return redirect()->route('anything');  // or
+        return redirect()->back();
     }
 
     /**

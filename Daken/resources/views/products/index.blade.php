@@ -26,30 +26,19 @@
 
                                 <div class="latest-product__slider owl-carousel">
                                     <div class="latest-prdouct__slider__item">
-                                        <?php
-                                        $db_conn=mysqli_connect("localhost","root","","dakennn");
-
-                                        $result=$db_conn->query("SELECT* FROM products");
-                                        $records_array=mysqli_fetch_all($result,MYSQLI_ASSOC);
-                                        $stopat=count($records_array)-4;
-                                        $i=count($records_array)-1;
-                                       
-                                        for($i;$i>$stopat;$i--)
-                                        {
-                                        ?>
                                            @foreach ($products as $product)
-                                                <a href="#" class="latest-product__item">
-                                                <div class="latest-product__item__pic">
-                                                    <img src="{{ asset('/img/'.$product['productsImage'] ) }}" width="70px" height="70px" alt="Image" >
-                                                </div>
-                                                <div class="latest-product__item__text">
-                                                    <h6>{{ $product['name'] }}</h6>
-                                                    <span>{{ $product['price'] }}</span>
-                                                </div>
-                                                </a>
-                                            @endforeach
-                                       <?php } ?>
-                                           
+                                                @if($loop->index>$count -6)
+                                                    <a href="#" class="latest-product__item">
+                                                    <div class="latest-product__item__pic">
+                                                        <img src="{{ asset('/img/'.$product['productsImage'] ) }}" width="70px" height="70px" alt="Image" >
+                                                    </div>
+                                                    <div class="latest-product__item__text">
+                                                        <h6>{{ $product['name'] }}</h6>
+                                                        <span>{{ $product['price'] }}</span>
+                                                    </div>
+                                                    </a>
+                                                @endif
+                                            @endforeach                                           
                                     </div>
                                 </div>
                             </div>
@@ -65,21 +54,26 @@
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
                                 <!--   EACH PRODUCT ON SALE IS IN A DIV   -->
-                                @foreach ($products as $product)
+                                @foreach ($offers as $offer)
+                                        @php
+                                        $offer_int=intval( substr($offer->offerRatio,0,2) );
+                                        $temp=$offer->productPrice*($offer_int/100);
+                                        $newPrice=$offer->productPrice-$temp;
+                                        @endphp
                                         <div class="col-lg-4">
                                         <div class="product__discount__item">
                                             <div class="product__discount__item__pic set-bg"
-                                                data-setbg="{{ $product['image_path'] }}">
-                                                <div class="product__discount__percent">-{{ $product['$product_offerratio'] }}</div>
+                                                data-setbg="{{ asset('/img/'.$offer->productImage) }}">
+                                                <div class="product__discount__percent">-{{ $offer->offerRatio }}</div>
                                                 <ul class="product__item__pic__hover">
                                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                     <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                                 </ul>
                                             </div>
                                             <div class="product__discount__item__text">
-                                                <span>{{ $product['product_category'] }}</span>
-                                                <h5><a href="#">{{ $product['name'] }}</a></h5>
-                                                <div class="product__item__price">$20.00 <span>${{ $product['price'] }}</span></div>
+                                                <span>{{ $offer->productCategory }}</span>
+                                                <h5><a href="#">{{ $offer->productName }}</a></h5>
+                                                <div class="product__item__price">${{$newPrice}} <span>${{ $offer->productPrice }}</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +113,7 @@
                      @foreach ($products as $product)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ $product['image_path'] }}">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/'.$product['productsImage'] ) }}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
