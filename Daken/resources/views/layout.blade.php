@@ -128,7 +128,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="{{ route('home.index') }}"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -138,12 +138,11 @@
                             <li><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="{{ route('home.index') }}">Shop Details</a></li>
-                                    <li><a href="{{ route('home.index') }}">Shoping Cart</a></li>
-                                    <li><a href="{{ route('home.index') }}">Check Out</a></li>
+                                    <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
+                                    <li><a href="{{ route('home.checkOut') }}">Check Out</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a href="/contact">Contact</a></li>
+                            <li class="active"><a href="{{ route('home.contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -175,11 +174,9 @@
                         <span>Categories</span>
                     </div>
                     <ul>
-                        <li><a href="./categoryWestern.php">Western itemes</a></li>
-                        <li><a href="./categoryOriental.php">Oriental items</a></li>
-                        <li><a href="./categorySingle.php">Single items</a></li>
-
-
+                        <li><a href="{{ route('home.categoryWestern') }}">Western itemes</a></li>
+                        <li><a href="{{ route('home.categoryOriental') }}">Oriental items</a></li>
+                        <li><a href="{{ route('home.categorySingle') }}">Single items</a></li>
                     </ul>
                 </div>
             </div>

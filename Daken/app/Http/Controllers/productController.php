@@ -124,9 +124,34 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $product)
     {
         //  post
+
+        $request->validate([
+            'product_name'=>'required',
+            'product_description'=>'required',
+            'product_price'=>['required','integer'],
+            'category'=>'required',
+            'image'=>'required',
+        ]);
+
+        $record=DB::table('products')
+        ->where('productId','=',$product)
+        ->get();
+        //taking thr input from form
+        $record->name=strip_tags($request->input('product_name'));
+        $record->description=strip_tags($request->input('product_description'));
+        $record->price=strip_tags($request->input('product_price'));
+        $record->category=strip_tags($request->input('category'));
+
+        $photoName=$request->file('image')->getClientOriginalName();
+        $record->productImage=strip_tags($photoName);
+        $request->file('image')->store('public/img/',$photoName);
+
+        $product->save();
+        return redirect()->route('anything');  // or
+        return redirect()->back();
     }
 
     /**

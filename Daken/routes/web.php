@@ -27,6 +27,16 @@ Route::get('/aboutus',[homeController::class,'aboutus'] )->name('home.aboutus');
 
 Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] )->name('home.aboutOurShop');
 
+Route::get('/shopingCart',[homeController::class,'shopingCart'] )->name('home.shopingCart');
+
+Route::get('/checkOut',[homeController::class,'checkOut'] )->name('home.checkOut');
+
+Route::get('/categoryWestern',[homeController::class,'categoryWestern'] )->name('home.categoryWestern');
+Route::get('/categoryOriental',[homeController::class,'categoryOriental'] )->name('home.categoryOriental');
+Route::get('/categorySingle',[homeController::class,'categorySingle'] )->name('home.categorySingle');
+
+
+
 Route::resource('products',productController::class);
 
 

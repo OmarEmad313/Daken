@@ -25,5 +25,20 @@ class homeController extends Controller
     public function aboutOurShop () {
         return view('aboutOurShop');
     }
-
+    
+    public function shopingCart () {
+        return view('shopingCart');
+    }
+    public function checkOut () {
+        return view('checkout');
+    }
+    public function categoryWestern () {
+        return view('categoryWestern');
+    }
+    public function categoryOriental () {
+        return view('categoryOriental');
+    }
+    public function categorySingle () {
+        return view('categorySingle');
+    }
 }
