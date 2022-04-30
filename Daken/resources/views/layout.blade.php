@@ -17,13 +17,13 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/elegant-icons.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/nice-select.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/jquery-ui.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/slicknav.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url('css/style.css')}}" type="text/css">
 </head>
 
 <body>
@@ -264,6 +264,16 @@
 </footer>
 <!-- Footer Section End -->
     <!-- Js Plugins -->
+    <script src={{ url('js/jquery-3.3.1.min.js')}}></script>
+    <script src={{ url('js/bootstrap.min.js')}}></script>
+    <script src={{ url('js/jquery.nice-select.min.js')}}></script>
+    <script src={{ url('js/jquery-ui.min.js')}}></script>
+    <script src={{ url('js/jquery.slicknav.js')}}></script>
+    <script src={{ url('js/mixitup.min.js')}}></script>
+    <script src={{ url('js/owl.carousel.min.js')}}></script>
+    <script src={{ url('js/main.js')}}></script>
+
+<!-- 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
@@ -272,8 +282,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-
-
+ -->
 
 </body>
 

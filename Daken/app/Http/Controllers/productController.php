@@ -41,7 +41,7 @@ class productController extends Controller
     public function create()
     {
         // (get req)
-        return view('product.create');
+        return view('products.create');
     }
 
     /**
@@ -83,10 +83,19 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($product)
     {
         // get
-        return view('product.show');
+
+        $product=DB::table('products')
+        ->where('productId','=',$product)
+        ->get();
+
+        //$product=products::findOrFail($product);
+
+        return view('products.show',[
+            'product'=>$product
+        ]);
     }
 
     /**
@@ -95,9 +104,17 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($product)
     {
         //  get
+
+        $product=DB::table('products')
+        ->where('productId','=',$product)
+        ->get();
+
+        return view('products.edit',[
+            'product'=>$product
+        ]);
     }
 
     /**
