@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 @section('content')
@@ -13,9 +14,9 @@
                             <h4>Department</h4>
                             <ul>
                                 
-                            <li><a href="./categoryWestern.php">Western itemes</a></li>
-                            <li><a href="./categoryOriental.php">Oriental items</a></li>
-                            <li><a href="./categorySingle.php">Single items</a></li>
+                            <li><a href="{{ route('home.categoryWestern') }}">Western itemes</a></li>
+                            <li><a href="{{ route('home.categoryOriental') }}">Oriental items</a></li>
+                            <li><a href="{{ route('home.categorySingle') }}">Single items</a></li>
 
                             </ul>
                         </div>
@@ -145,4 +146,3 @@
     <!-- Product Section End -->
 
 @endsection()
-

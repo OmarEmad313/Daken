@@ -25,8 +25,7 @@
       <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
-                                <div class="filter__found">
-                                </div>
+                                <div class="filter__found"></div>
                             </div>
                         </div>
                     </div>
@@ -75,9 +74,7 @@
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
+         
 
       <!--  western category  Section End -->
       
