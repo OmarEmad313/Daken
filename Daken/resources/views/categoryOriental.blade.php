@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-
+            @foreach($products as $product)
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="product__item">
@@ -40,13 +40,13 @@
                             </ul>
                         </div>
                         <div class="product__item__text">
-                            <h6><a href="#">name</a></h6>
-                            <h5> price</h5>
+                            <h6><a href="#">{{ $product['name'] }}</a></h6>
+                            <h5>{{ $product['price'] }}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-
+            @endforeach
             <div class="filter__item">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">

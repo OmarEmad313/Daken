@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\orientalC;
 use App\Http\Controllers\productController;
 
 /*
@@ -38,6 +39,7 @@ Route::get('/categorySingle',[homeController::class,'categorySingle'] )->name('h
 
 
 Route::resource('products',productController::class);
+// Route::resource('/categoryOriental',oriental::class);
 
 
 /* Route::get('/shop/{category?}/{item?}', function ($category=null,$item=null) {
