@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\products;
 use Illuminate\Support\Facades\DB;
 
-class westernS extends Controller
+class orientalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,14 @@ class westernS extends Controller
      */
     public function index()
     {
-        $westernItems=DB::table('products')
-        ->where('category','=','western items')
+        //
+        $orientalItems=DB::table('products')
+        ->where('category','=','oriental items')
         ->get();
-        return view('categoryWestern',[
-            'products'=>$westernItems
+        return view('categoryOriental',[
+            'oa' => $orientalItems
         ]);
+
     }
 
     /**
