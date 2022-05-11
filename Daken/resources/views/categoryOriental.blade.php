@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($oa as $product)
+                @foreach($record2 as $product)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                             <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/'.$product->productsImage ) }}">

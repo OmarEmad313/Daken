@@ -2,22 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
-use App\Http\Controllers\orientalC;
 use App\Http\Controllers\productController;
+
+
 
 
 
 Route::get('/',[homeController::class,'index'] )->name('home.index');
 
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
 
 Route::get('/shop',[homeController::class,'shop'] )->name('home.shop');
 

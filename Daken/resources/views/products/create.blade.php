@@ -34,6 +34,19 @@ edit and create are the same -->
                             @enderror
                         </div>
                     </div>
+
+                    <div class="col-md-6 mb-4 pb-2">
+                      <div class="form-outline datepicker w-100">
+                        <input type="text" class="form-control form-control-lg" id="product_price" name="product_price"/>
+                        <label for="product_price" class="form-label">Price</label>
+                        @error('product_price')
+                            <div class="form-error">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                      </div>
+                    </div>
+                    
               </div>
 
               <div class="row">
@@ -56,23 +69,14 @@ edit and create are the same -->
                 <div class="col-md-6 mb-4 pb-2">
 
                   <div class="form-outline">
-                    <input type="file" id="productimage" name="productimage" class="form-control form-control-lg" />
                     <label class="form-label" for="productimage">Product image</label>
+                    <!-- form-control form-control-lg -->
+                    <input type="file" id="productimage" name="productimage" class="" />
                   </div>
 
                 </div>
 
-                <div class="col-md-6 mb-4 pb-2">
-                    <div class="form-outline datepicker w-100">
-                        <input type="text" class="form-control form-control-lg" id="product_price" name="product_price"/>
-                        <label for="product_price" class="form-label">Price</label>
-                        @error('product_price')
-                            <div class="form-error">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                      </div>
-                </div>
+                
                 
               </div>
 

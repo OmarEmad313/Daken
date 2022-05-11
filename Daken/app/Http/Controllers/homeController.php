@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class homeController extends Controller
 {
@@ -33,12 +35,27 @@ class homeController extends Controller
         return view('checkout');
     }
     public function categoryWestern () {
-        return view('categoryWestern');
+        $westernItems=DB::table('products')
+        ->where('category','=','wastern items')
+        ->get();
+        return view('categoryWestern',[
+            'record' => $westernItems
+        ]); 
     }
     public function categoryOriental () {
-        return view('categoryOriental');
+        $orientalItems=DB::table('products')
+        ->where('category','=','oriental items')
+        ->get();
+        return view('categoryOriental',[
+            'record2' => $orientalItems
+        ]);
     }
     public function categorySingle () {
-        return view('categorySingle');
-    }
+        $singleItems=DB::table('products')
+        ->where('category','=','single items')
+        ->get();
+        return view('categorySingle',[
+            'record3' => $singleItems
+        ]); 
+       }
 }
