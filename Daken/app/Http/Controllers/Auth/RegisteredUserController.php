@@ -44,11 +44,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-<<<<<<< HEAD
-        $user->attachRole('1'); 
-=======
 
->>>>>>> parent of e3b1b8e (lara)
         event(new Registered($user));
 
         Auth::login($user);
