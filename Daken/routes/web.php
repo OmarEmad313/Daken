@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\orientalC;
 use App\Http\Controllers\productController;
-
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/',[homeController::class,'index'] )->name('home.index');
@@ -12,10 +12,10 @@ Route::get('/',[homeController::class,'index'] )->name('home.index');
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+Route::group(['middleware'=>['auth']],function(){
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
