@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\products;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 
 class productController extends Controller
@@ -56,24 +57,25 @@ class productController extends Controller
             'product_description'=>'required',
             'product_price'=>['required','integer'],
             'category'=>'required',
-            'image'=>'required',
+            'productimage'=>'required',
         ]);
 
         $product=new products();
         //taking thr input from form
-        $product->id=rand();
+        $product->productId=rand();
         $product->name=strip_tags($request->input('product_name'));
         $product->description=strip_tags($request->input('product_description'));
         $product->price=strip_tags($request->input('product_price'));
         $product->category=strip_tags($request->input('category'));
 
-        $photoName=$request->file('image')->getClientOriginalName();
-        $product->productImage=strip_tags($photoName);
-        $request->file('image')->store('public/img/',$photoName);
+        $photoName=$request->file('productimage')->getClientOriginalName();
+        $product->productsImage=strip_tags($photoName);
+        $request->file('productimage')->storeAs('public/img/',$photoName);
+        //$request->file('productimage')->store('img', 'public');
 
         $product->save();
-        return redirect()->route('anything');  // or
-        return redirect()->back();
+        return redirect()->route('products.index');  // or
+        /* return redirect()->back(); */
     }
 
     /**
@@ -107,12 +109,12 @@ class productController extends Controller
     {
         //  get
 
-        $product=DB::table('products')
+        $product2=DB::table('products')
         ->where('productId','=',$product)
         ->get();
 
         return view('products.edit',[
-            'product'=>$product
+            'product'=>$product2
         ]);
     }
 
@@ -132,25 +134,21 @@ class productController extends Controller
             'product_description'=>'required',
             'product_price'=>['required','integer'],
             'category'=>'required',
-            'image'=>'required',
         ]);
-
-        $record=DB::table('products')
+        
+        $photoName=$request->file('productimage')->getClientOriginalName();
+        $records=DB::table('products')
         ->where('productId','=',$product)
-        ->get();
-        //taking thr input from form
-        $record->name=strip_tags($request->input('product_name'));
-        $record->description=strip_tags($request->input('product_description'));
-        $record->price=strip_tags($request->input('product_price'));
-        $record->category=strip_tags($request->input('category'));
-
-        $photoName=$request->file('image')->getClientOriginalName();
-        $record->productImage=strip_tags($photoName);
-        $request->file('image')->store('public/img/',$photoName);
-
-        $product->save();
-        return redirect()->route('anything');  // or
-        return redirect()->back();
+        ->update([
+            'name'=>$request->input('product_name'),
+            'description'=>$request->input('product_description'),
+            'price'=>$request->input('product_price'),
+            'category'=>$request->input('category'),
+            'productsImage'=>$photoName
+        ]);
+        $request->file('productimage')->storeAs('public/img/',$photoName);
+        
+        return redirect()->route('products.index');  // or
     }
 
     /**
@@ -159,8 +157,14 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($product)
     {
         //  delete 
+        $record=DB::table('products')
+        ->where('productId','=',$product)
+        ->get();
+        $record-> delete();
+        return redirect()->route('products.index');  // or
+
     }
 }

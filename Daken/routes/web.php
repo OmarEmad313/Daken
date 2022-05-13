@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\offersController;
 
 
 
@@ -32,3 +33,4 @@ Route::get('/categorySingle',[homeController::class,'categorySingle'] )->name('h
 
 
 Route::resource('products',productController::class);
+Route::resource('offers',offersController::class);

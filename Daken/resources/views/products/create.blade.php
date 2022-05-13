@@ -1,6 +1,4 @@
-<!-- <input type="file" name="image"> 
 
-edit and create are the same -->
 @extends('layout')
 
 @section('content')
@@ -13,7 +11,7 @@ edit and create are the same -->
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Product Form</h3>
 
-            <form method="POST" action="{{route('products.store') }}">
+            <form method="POST" action="{{route('products.store') }} " enctype="multipart/form-data">
                 @csrf
               <div class="row">
                     <!-- <div class="col-md-6 mb-4">
@@ -25,7 +23,7 @@ edit and create are the same -->
 
                     <div class="col-md-6 mb-4">
                         <div class="form-outline">
-                            <input type="text" id="product_name" name="product_name" class="form-control form-control-lg" />
+                            <input type="text" id="product_name" name="product_name" class="form-control form-control-lg " value="{{ old('product_name')}}" />
                             <label class="form-label" for="product_name"> Name</label>
                             @error('product_name')
                                 <div class="form-error">
@@ -37,7 +35,7 @@ edit and create are the same -->
 
                     <div class="col-md-6 mb-4 pb-2">
                       <div class="form-outline datepicker w-100">
-                        <input type="text" class="form-control form-control-lg" id="product_price" name="product_price"/>
+                        <input type="text" class="form-control form-control-lg" id="product_price" name="product_price" value="{{ old('product_price')}}"/>
                         <label for="product_price" class="form-label">Price</label>
                         @error('product_price')
                             <div class="form-error">
@@ -53,7 +51,7 @@ edit and create are the same -->
 
                     <div class="col-md-6 mb-4 d-flex align-items-center">
                         <div class="form-outline datepicker w-100">
-                            <textarea class="form-control form-control-lg" id="product_description" name="product_description"> </textarea>
+                            <textarea class="form-control form-control-lg" id="product_description" name="product_description" value="{{ old('product_description')}}"> </textarea>
                             <label for="product_description" class="form-label">Description</label>
                             @error('product_description')
                                 <div class="form-error">
@@ -66,18 +64,20 @@ edit and create are the same -->
               </div>
 
               <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
+              <div class="col-md-6 mb-4 pb-2">
 
-                  <div class="form-outline">
-                    <label class="form-label" for="productimage">Product image</label>
-                    <!-- form-control form-control-lg -->
-                    <input type="file" id="productimage" name="productimage" class="" />
-                  </div>
-
+                <div class="form-outline">
+                  <label class="form-label" for="productimage">Product image</label>
+                  <!-- form-control form-control-lg -->
+                  <input type="file" id="productimage" name="productimage" class="" />
+                  @error('productimage')
+                      <div class="form-error">
+                          {{ $message }}
+                      </div>
+                  @enderror
                 </div>
 
-                
-                
+                </div> 
               </div>
 
               <div class="row">
@@ -100,7 +100,7 @@ edit and create are the same -->
               </div>
 
               <div class="mt-4 pt-2">
-                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                <button class="btn btn-primary btn-lg" type="submit" >Submit</button> 
               </div>
 
             </form>
