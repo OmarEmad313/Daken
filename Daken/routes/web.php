@@ -33,4 +33,7 @@ Route::get('/categorySingle',[homeController::class,'categorySingle'] )->name('h
 
 
 Route::resource('products',productController::class);
+route::delete('products/destroy{id}',[productController::class,'destroy'])->name('product.destory');
+
 Route::resource('offers',offersController::class);
+route::delete('offers/destroy{id}',[offersController::class,'destroy'])->name('offers.destory');
