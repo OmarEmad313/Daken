@@ -30,6 +30,8 @@ class offersController extends Controller
     public function create()
     {
         //
+        return view('offers.create');
+
     }
 
     /**
@@ -40,7 +42,13 @@ class offersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $offer=new offers();
+        $offer->offerId=rand();
+        $offer->productId=strip_tags($request->input('product_id'));
+        $offer->offerRatio=strip_tags($request->input('offer_ratio'));
+
+        $offer->save();
+        return redirect()->back(); 
     }
 
     /**
@@ -60,9 +68,17 @@ class offersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($offer)
     {
         //
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$offer)
+        ->get();
+
+        return view('offers.edit',[
+            'offers'=>$offerRecord
+        ]);
+
     }
 
     /**
@@ -72,9 +88,16 @@ class offersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $offer)
     {
         //
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$offer)
+        ->update([
+            'productId'=>$request->input('product_id'),
+            'offerRatio'=>$request->input('offer_ratio')
+        ]);
+        return redirect()->back(); 
     }
 
     /**
@@ -85,6 +108,10 @@ class offersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$id)
+        ->delete();
+
+        return redirect('offers.index'); 
     }
 }

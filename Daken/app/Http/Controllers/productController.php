@@ -157,13 +157,13 @@ class productController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($product)
+    public function destroy($id)
     {
         //  delete 
         $record=DB::table('products')
-        ->where('productId','=',$product)
-        ->get();
-        $record-> delete();
+        ->where('productId','=',$id)
+        ->delete();
+        
         return redirect()->route('products.index');  // or
 
     }
