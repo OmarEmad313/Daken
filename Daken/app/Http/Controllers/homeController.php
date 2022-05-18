@@ -2,14 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+/* use Illuminate\Http\controllers\Auth; */
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class homeController extends Controller
 {
     public function index () {
-        return view('index');
+        //return view('index');
+
+        //return view('welcome');
+        $role=Auth::user()->role;
+        //echo 'the role is  '.$role;
+        if($role=='0'){
+            return view('index');
+        }
+        if($role=='1'){
+            return view('welcome');
+        }
     }
 
     public function contact () {

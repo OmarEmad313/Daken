@@ -9,8 +9,12 @@ use App\Http\Controllers\offersController;
 
 
 
-Route::get('/',[homeController::class,'index'] )->name('home.index');
+/* Route::get('/',[homeController::class,'index'] )->name('home.index'); */
+Route::get('/',function(){
+    return view('auth/register');
+});
 
+Route::get('redirects',[homeController::class,'index'] )->name('home.index');
 
 
 Route::get('/shop',[homeController::class,'shop'] )->name('home.shop');
@@ -37,3 +41,14 @@ route::delete('products/destroy{id}',[productController::class,'destroy'])->name
 
 Route::resource('offers',offersController::class);
 route::delete('offers/destroy{id}',[offersController::class,'destroy'])->name('offers.destory');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
