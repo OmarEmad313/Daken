@@ -91,13 +91,14 @@
 
     <!-- Header Section Begin -->
     <header class="header">
+      
         <div class="header__top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="header__top__left">
                             <ul>
-                                <li><i class="fa fa-envelope"></i> DakenEG@outlook.com </li>
+                                <li><i class="fa fa-user"></i> welcome {{$user->name}} </li>
 
                             </ul>
                         </div>
@@ -160,6 +161,7 @@
                 <i class="fa fa-bars"></i>
             </div>
         </div>
+       
     </header>
     <!-- Header Section End -->
 
@@ -180,6 +182,7 @@
                     </ul>
                 </div>
             </div>
+            <!--  -->
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
@@ -196,12 +199,14 @@
                         <div class="hero__search__phone__icon">
                             <i class="fa fa-phone"></i>
                         </div>
+                        <!--  -->
                         <div class="hero__search__phone__text">
                             <h5>01050070076</h5>
                             <span>support 24/7 time</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -269,17 +274,6 @@
     <script src={{ url('js/mixitup.min.js')}}></script>
     <script src={{ url('js/owl.carousel.min.js')}}></script>
     <script src={{ url('js/main.js')}}></script>
-
-<!-- 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
- -->
 
 </body>
 

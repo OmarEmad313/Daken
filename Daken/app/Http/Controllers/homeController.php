@@ -19,8 +19,9 @@ class homeController extends Controller
             return view('index');
         }
         if($role=='1'){
-            return view('welcome');
+            return view('admin_dashboard');
         }
+        
     }
 
     public function contact () {
@@ -45,6 +46,7 @@ class homeController extends Controller
     public function checkOut () {
         return view('checkout');
     }
+    //////////////////////////////////////////////////
     public function categoryWestern () {
         $westernItems=DB::table('products')
         ->where('category','=','wastern items')

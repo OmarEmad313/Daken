@@ -21,7 +21,7 @@
      
  <!-- about us Section Begin -->
  <div class="about_us">
- <h2>  About us</h2>
+ <h2>  About us </h2>
 <br>
 <p> - Established in 2021, Daken is a bakery & dessert brand providing the highest quality of handcrafted
     <br> desserts in the market.
@@ -32,6 +32,8 @@
     
    <br> – Our vision of is to provide an increasing variety of the highest quality, speciality products
      in the market, <br> while maintaining outstanding customer experience & satisfaction </p>
+
+     
 </div>
      <!-- about us Section End -->
      
