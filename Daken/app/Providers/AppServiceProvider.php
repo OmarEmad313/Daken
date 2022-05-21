@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-use App\Models\cart;
+use App\Models\carts;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\view;
 use Illuminate\Support\Facades\Auth;
@@ -36,10 +36,12 @@ class AppServiceProvider extends ServiceProvider
         ->get();*/
         //view::share('user',Auth::user()); 
 
-        $items=cart::all();
-        view()->composer('layout',function ($view){
+        
+        view()->composer('*',function ($view){
+            $cartItems=carts::where('userId','=',Auth::user()->id);
+            $cartItemsCount=$cartItems->count();
             $view->with('user',Auth::user());
-            $view->with('cart','$items');
+            $view->with('cartNumber',$cartItemsCount);
         });
     }
 }
