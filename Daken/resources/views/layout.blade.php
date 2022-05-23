@@ -140,7 +140,7 @@
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
-                                    <li><a href="{{ route('home.checkOut') }}">Check Out</a></li>
+                                    <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
                                 </ul>
                             </li>
                             <li class="active"><a href="{{ route('home.contact') }}">Contact</a></li>
@@ -153,7 +153,7 @@
                             <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
                             <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">item: <span>${{$total}}</span></div>
                     </div>
                 </div>
             </div>

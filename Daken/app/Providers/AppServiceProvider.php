@@ -40,8 +40,15 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('*',function ($view){
             $cartItems=carts::where('userId','=',Auth::user()->id);
             $cartItemsCount=$cartItems->count();
+            $total=DB::table('carts')
+            ->where('userId','=',Auth::user()->id)
+            ->join('products','carts.productId','=','products.productId')
+            ->sum('price');
+
             $view->with('user',Auth::user());
             $view->with('cartNumber',$cartItemsCount);
+            $view->with('total',$total);
+
         });
     }
 }

@@ -5,7 +5,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\offersController;
 use App\Http\Controllers\userController;
-
+use App\Http\Controllers\checkoutController;
 
 
 
@@ -26,7 +26,8 @@ Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] )->name('home.
 
 Route::get('/shopingCart',[homeController::class,'shopingCart'] )->name('home.shopingCart');
 
-Route::get('/checkOut',[homeController::class,'checkOut'] )->name('home.checkOut');
+Route::resource('checkout',checkoutController::class );
+/* Route::post('/checkOut',[checkoutController::class,'store'] ); */
 
 Route::get('/contact',[homeController::class,'contact'] )->name('home.contact');
 

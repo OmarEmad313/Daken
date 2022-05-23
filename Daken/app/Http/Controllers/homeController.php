@@ -43,9 +43,9 @@ class homeController extends Controller
     public function shopingCart () {
         return view('shopingCart');
     }
-    public function checkOut () {
+    /* public function checkOut () {
         return view('checkout');
-    }
+    } */
     //////////////////////////////////////////////////
     public function categoryWestern () {
         $westernItems=DB::table('products')
