@@ -86,15 +86,36 @@
                 </div>
             </div>
             <form action="#">
+                @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your name">
+                    <label class="form-label" for="first_name"> First Name</label>
+                    <input type="text" id="first_name" name="first_name" class="form-control form-control-lg " value="{{ old('first_name')}}" />
+                        @error('first_name')
+                            <div class="form-error">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
+
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your Email">
+                        <label class="form-label" for="email">  Email</label>
+                        <input type="text" id="email" name="email" class="form-control form-control-lg " value="{{ old('email')}}" />
+                            @error('email')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                     </div>
                     <div class="col-lg-12 text-center">
-                        <textarea placeholder="Your message"></textarea>
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control form-control-lg" id="message" name="message" value="{{ old('message')}}"> </textarea>
+                            @error('message')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                         <button type="submit" class="site-btn">SEND MESSAGE</button>
                     </div>
                 </div>

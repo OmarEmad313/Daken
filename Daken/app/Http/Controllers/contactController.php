@@ -3,36 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use App\Models\orders;
 
-
-class checkoutController extends Controller
+class contactController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * 
      */
     public function index()
     {
-        $productRecord=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->join('products','carts.productId','=','products.productId')
-        ->select('products.name as productName','products.price as productPrice')
-        ->get();
-
-        $total=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->join('products','carts.productId','=','products.productId')
-        ->sum('price');
-
-        return view('checkout.index',[
-            'products'=>$productRecord,
-            'totalPrice'=>$total
-        ]);
+        //
     }
 
     /**
@@ -53,26 +34,7 @@ class checkoutController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'phone'=>'required',
-            'email'=>'required',
-        ]);
-
-        $order=new orders();
-        $order->orderId=rand();
-        $order->userId=Auth::user()->id;
-        $order->branchId=0;
-        $order->firstName=strip_tags($request->input('first_name'));
-        $order->lastName=strip_tags($request->input('last_name'));
-        $order->phone=strip_tags($request->input('phone'));
-        $order->reservationMail=strip_tags($request->input('email'));
-        $order->orderNotes=strip_tags($request->input('order_notes'));
-        $order->save();
-
-        return redirect()->route('products.index');
-       
+        //
     }
 
     /**
