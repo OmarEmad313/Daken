@@ -85,9 +85,10 @@
                     </div>
                 </div>
             </div>
-            <form action="#">
+            
+            <form method="POST" action="{{route('contact.store') }}">
                 @csrf
-                <div class="row">
+               <!--  <div class="row">
                     <div class="col-lg-6 col-md-6">
                     <label class="form-label" for="first_name"> First Name</label>
                     <input type="text" id="first_name" name="first_name" class="form-control form-control-lg " value="{{ old('first_name')}}" />
@@ -106,7 +107,7 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                    </div>
+                    </div> -->
                     <div class="col-lg-12 text-center">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control form-control-lg" id="message" name="message" value="{{ old('message')}}"> </textarea>

@@ -5,18 +5,24 @@ namespace App\Http\Controllers;
 /* use Illuminate\Http\controllers\Auth; */
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\reviews;
+
 
 
 class homeController extends Controller
 {
     public function index () {
-        //return view('index');
-
-        //return view('welcome');
+     
         $role=Auth::user()->role;
-        //echo 'the role is  '.$role;
+        $reviews=DB::table('reviews')
+        ->join('users','reviews.reviewerId','=','users.id')
+        ->select('reviews.message as message','users.name as name')
+        ->get();
+
         if($role=='0'){
-            return view('index');
+            return view('index',[
+                'reviews'=>$reviews
+            ]);
         }
         if($role=='1'){
             return view('admin_dashboard');
@@ -24,9 +30,9 @@ class homeController extends Controller
         
     }
 
-    public function contact () {
-        return view('contact');
-    }
+    /* public function contact () {
+        return view('contact/contact');
+    } */
 
     public function shop () {
         return view('shop');
@@ -43,9 +49,7 @@ class homeController extends Controller
     public function shopingCart () {
         return view('shopingCart');
     }
-    /* public function checkOut () {
-        return view('checkout');
-    } */
+    
     //////////////////////////////////////////////////
     public function categoryWestern () {
         $westernItems=DB::table('products')

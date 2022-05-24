@@ -15,24 +15,15 @@
 <div class="testimonial">
     <div id="demo" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
+          @foreach($reviews as $review) 
+            <div class="carousel-item active">   
                 <div class="carousel-caption">
-                    <p>"I have enjoyed a tasty dessert while not crushing my diet"</p> <img src="{{ url('img/konafa.gif')}}">
-                    <div id="image-caption">Nick Doe</div>
+                    <p>"{{$review->message}}"</p> <!-- <img src="{{ url('img/konafa.gif')}}"> -->
+                    <div id="image-caption">{{$review->name}}</div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>"My go to place every weekends."</p> <img src="{{ url('img/baklwa.jpg')}}" class="img-fluid">
-                    <div id="image-caption">Cromption Greves</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-caption">
-                    <p>"There desserts are really made with love and passion"</p> <img src="{{ url('img/baklwa.jpg')}}" class="img-fluid">
-                    <div id="image-caption">Harry Mon</div>
-                </div>
-            </div>
+          @endforeach
+           
         </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i >< </i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i >></i> </a>
     </div>
 </div>

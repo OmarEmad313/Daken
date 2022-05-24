@@ -36,8 +36,9 @@ class AppServiceProvider extends ServiceProvider
         ->get();*/
         //view::share('user',Auth::user()); 
 
-        
+    
         view()->composer('*',function ($view){
+            if (Auth::check()){
             $cartItems=carts::where('userId','=',Auth::user()->id);
             $cartItemsCount=$cartItems->count();
             $total=DB::table('carts')
@@ -48,7 +49,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('user',Auth::user());
             $view->with('cartNumber',$cartItemsCount);
             $view->with('total',$total);
-
+            }
+            else{
+                $view->with('user',Auth::user());
+                $view->with('cartNumber','0');
+                $view->with('total','0');
+            }
         });
     }
 }

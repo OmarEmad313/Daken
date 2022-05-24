@@ -10,7 +10,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>Daken</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -113,12 +113,9 @@
                                 <img src="img/language.png" alt="">
                                 <div>English</div>
                                 <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">English</a></li>
-                                </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="#"><i class="fa fa-user"></i> Logout</a>
                             </div>
                         </div>
                     </div>
@@ -143,7 +140,7 @@
                                     <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
                                 </ul>
                             </li>
-                            <li class="active"><a href="{{ route('home.contact') }}">Contact</a></li>
+                            <li class="active"><a href="{{ route('contact.index') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -240,8 +237,8 @@
                     <ul>
                         <li><a href="{{ route('home.aboutus') }}">About Us</a></li>
                         <li><a href="{{ route('home.aboutOurShop') }}">About Our Shop</a></li>
-                        <li><a href="{{ route('home.contact') }}">Contact</a></li>
-                        <li><a href="{{ route('home.contact') }}">Our location</a></li>
+                        <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                        <li><a href="{{ route('contact.index') }}">Our location</a></li>
                     </ul>
                    
                 </div>
