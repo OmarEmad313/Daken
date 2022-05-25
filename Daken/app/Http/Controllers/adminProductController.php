@@ -16,7 +16,11 @@ class adminProductController extends Controller
      */
     public function index()
     {
-        return view('adminProducts.index');
+        
+        return view('adminProducts.index',[
+            'products' => products::all(),
+            'test'=>'hi'
+        ]);
     }
 
     /**

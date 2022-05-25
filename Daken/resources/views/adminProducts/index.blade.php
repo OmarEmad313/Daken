@@ -4,7 +4,6 @@
 
 
 
-page for displaying products
 
 
-@endsection()
+@endsection() 

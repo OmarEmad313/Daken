@@ -15,7 +15,10 @@ class adminOfferConrtroller extends Controller
      */
     public function index()
     {
-        return view('adminOffers.index');
+        return view('adminOffers.index',[
+            'offers' => offers::all(),
+            'test'=>'hi'
+        ]);
     }
 
     /**
