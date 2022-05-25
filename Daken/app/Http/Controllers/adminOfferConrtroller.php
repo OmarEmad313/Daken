@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\offers;
 use Illuminate\Support\Facades\DB;
 
-
-class offersController extends Controller
+class adminOfferConrtroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class offersController extends Controller
      */
     public function index()
     {
-        
+        return view('adminOffers.index');
     }
 
     /**
@@ -26,7 +25,7 @@ class offersController extends Controller
      */
     public function create()
     {
-        
+        return view('adminOffers.create');
     }
 
     /**
@@ -37,7 +36,18 @@ class offersController extends Controller
      */
     public function store(Request $request)
     {
-      
+        $request->validate([
+            'product_id'=>['required','integer'],
+            'offer_ratio'=>['required','integer'],   
+        ]);
+
+        $offer=new offers();
+        $offer->offerId=rand();
+        $offer->productId=strip_tags($request->input('product_id'));
+        $offer->offerRatio=strip_tags($request->input('offer_ratio'));
+
+        $offer->save();
+        return redirect()->back(); 
     }
 
     /**
@@ -59,7 +69,13 @@ class offersController extends Controller
      */
     public function edit($offer)
     {
-        
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$offer)
+        ->get();
+
+        return view('adminOffers.edit',[
+            'offers'=>$offerRecord
+        ]);
     }
 
     /**
@@ -71,7 +87,13 @@ class offersController extends Controller
      */
     public function update(Request $request, $offer)
     {
-       
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$offer)
+        ->update([
+            'productId'=>$request->input('product_id'),
+            'offerRatio'=>$request->input('offer_ratio')
+        ]);
+        return redirect()->back(); 
     }
 
     /**
@@ -82,6 +104,10 @@ class offersController extends Controller
      */
     public function destroy($id)
     {
-        
+        $offerRecord=DB::table('offers')
+        ->where('offerId','=',$id)
+        ->delete();
+
+        return redirect('offers.index'); 
     }
 }

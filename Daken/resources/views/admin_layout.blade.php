@@ -57,15 +57,10 @@
       </div>
       <nav class="humberger__menu__nav mobile-menu">
           <ul>
-              <li class="active"><a href="{{ route('home.index') }}">Home</a></li>
-              <li><a href="{{ route('products.index') }}">Shop</a></li>
-              <li><a href="#">Pages</a>
-                  <ul class="header__menu__dropdown">
-                      <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
-                      <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
-                  </ul>
-              </li>
-              <li><a href="{{ route('contact.index') }}">Contact</a></li>
+              <li class="active"><a href="{{ route('home.index') }}">products</a></li>
+              <li><a href="{{ route('products.index') }}">offers</a></li>
+              <li><a href="{{ route('contact.index') }}">Reservations</a></li>
+              <li><a href="{{ route('contact.index') }}">Reviews</a></li>
           </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -129,27 +124,14 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="{{ route('home.index') }}">Home</a></li>
-                            <li><a href="{{ route('products.index') }}">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
-                                    <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="{{ route('contact.index') }}">Contact</a></li>
+                            <li><a href="{{ route('adminProducts.index') }}">Products</a></li>
+                            <li><a href="{{ route('adminOffers.index') }}">Offers</a></li>
+                            <li class="active"><a href="{{ route('contact.index') }}">Reservation</a></li>
+                            <li class="active"><a href="{{ route('contact.index') }}">Reviews</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-                            <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>${{$total}}</span></div>
-                    </div>
-                </div>
+                
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
@@ -157,55 +139,8 @@
         </div>
        
     </header>
-    <!-- Header Section End -->
+    
 
-     <!-- Hero Section Begin -->
- <section class="hero hero-normal">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="hero__categories">
-                    <div class="hero__categories__all">
-                        <i class="fa fa-bars"></i>
-                        <span>Categories</span>
-                    </div>
-                    <ul>
-                        <li><a href="{{ route('home.categoryWestern') }}">Western itemes</a></li>
-                        <li><a href="{{ route('home.categoryOriental') }}">Oriental items</a></li>
-                        <li><a href="{{ route('home.categorySingle') }}">Single items</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--  -->
-            <div class="col-lg-9">
-                <div class="hero__search">
-                    <div class="hero__search__form">
-                        <form action="#">
-                            <div class="hero__search__categories">
-                                All Categories
-                                <!-- <span class="arrow_carrot-down"></span> -->
-                            </div>
-                            <input type="text" placeholder="What do yo u need?">
-                            <button type="submit" class="site-btn">SEARCH</button>
-                        </form>
-                    </div>
-                    <div class="hero__search__phone">
-                        <div class="hero__search__phone__icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <!--  -->
-                        <div class="hero__search__phone__text">
-                            <h5>01050070076</h5>
-                            <span>support 24/7 time</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>  
-<!-- Hero Section End -->
 
 
 

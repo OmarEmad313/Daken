@@ -12,8 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    <x-jet-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('board') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('products.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('products') }}
                     </x-nav-link>
                 </div>
             </div>

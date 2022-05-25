@@ -40,7 +40,6 @@ class productController extends Controller
     public function create()
     {
         // (get req)
-        return view('products.create');
     }
 
     /**
@@ -51,29 +50,7 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'product_name'=>'required',
-            'product_description'=>'required',
-            'product_price'=>['required','integer'],
-            'category'=>'required',
-            'productimage'=>'required',
-        ]);
-
-        $product=new products();
-        //taking thr input from form
-        $product->productId=rand();
-        $product->name=strip_tags($request->input('product_name'));
-        $product->description=strip_tags($request->input('product_description'));
-        $product->price=strip_tags($request->input('product_price'));
-        $product->category=strip_tags($request->input('category'));
-
-        $photoName=$request->file('productimage')->getClientOriginalName();
-        $product->productsImage=strip_tags($photoName);
-        $request->file('productimage')->storeAs('public/img/',$photoName);
-        //$request->file('productimage')->store('img', 'public');
-
-        $product->save();
-        return redirect()->route('products.index');  // or
+        
         /* return redirect()->back(); */
     }
 
@@ -107,14 +84,6 @@ class productController extends Controller
     public function edit($product)
     {
         //  get
-
-        $product2=DB::table('products')
-        ->where('productId','=',$product)
-        ->get();
-
-        return view('products.edit',[
-            'product'=>$product2
-        ]);
     }
 
     /**
@@ -126,28 +95,7 @@ class productController extends Controller
      */
     public function update(Request $request, $product)
     {
-        //  post
-
-        $request->validate([
-            'product_name'=>'required',
-            'product_description'=>'required',
-            'product_price'=>['required','integer'],
-            'category'=>'required',
-        ]);
-        
-        $photoName=$request->file('productimage')->getClientOriginalName();
-        $records=DB::table('products')
-        ->where('productId','=',$product)
-        ->update([
-            'name'=>$request->input('product_name'),
-            'description'=>$request->input('product_description'),
-            'price'=>$request->input('product_price'),
-            'category'=>$request->input('category'),
-            'productsImage'=>$photoName
-        ]);
-        $request->file('productimage')->storeAs('public/img/',$photoName);
-        
-        return redirect()->route('products.index');  // or
+        //  post   
     }
 
     /**
@@ -158,12 +106,6 @@ class productController extends Controller
      */
     public function destroy($id)
     {
-        //  delete 
-        $record=DB::table('products')
-        ->where('productId','=',$id)
-        ->delete();
-        
-        return redirect()->route('products.index');  // or
-
+       
     }
 }

@@ -7,6 +7,8 @@ use App\Http\Controllers\offersController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\contactController;
+use App\Http\Controllers\adminOfferConrtroller;
+use App\Http\Controllers\adminProductController;
 
 
 
@@ -45,6 +47,11 @@ route::delete('products/destroy{id}',[productController::class,'destroy'])->name
 
 Route::resource('offers',offersController::class);
 route::delete('offers/destroy{id}',[offersController::class,'destroy'])->name('offers.destory');
+
+Route::resource('adminProducts',adminProductController::class);
+
+Route::resource('adminOffers',adminOfferConrtroller::class);
+
 
 
 Route::middleware([

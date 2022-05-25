@@ -25,14 +25,11 @@ class homeController extends Controller
             ]);
         }
         if($role=='1'){
-            return view('admin_dashboard');
+            return view('adminProducts.index');
         }
         
     }
 
-    /* public function contact () {
-        return view('contact/contact');
-    } */
 
     public function shop () {
         return view('shop');
