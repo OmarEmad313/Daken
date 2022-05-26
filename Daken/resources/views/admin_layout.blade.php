@@ -60,7 +60,7 @@
               <li class="active"><a href="{{ route('home.index') }}">products</a></li>
               <li><a href="{{ route('products.index') }}">offers</a></li>
               <li><a href="{{ route('contact.index') }}">Reservations</a></li>
-              <li><a href="{{ route('contact.index') }}">Reviews</a></li>
+              <li><a href="{{ route('contact.index') }}">Feedback</a></li>
           </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -126,8 +126,8 @@
                         <ul>
                             <li><a href="{{ route('adminProducts.index') }}">Products</a></li>
                             <li><a href="{{ route('adminOffers.index') }}">Offers</a></li>
-                            <li class="active"><a href="{{ route('contact.index') }}">Reservation</a></li>
-                            <li class="active"><a href="{{ route('contact.index') }}">Reviews</a></li>
+                            <li class="active"><a href="{{ route('admin.reservation') }}">Reservation</a></li>
+                            <li class="active"><a href="{{ route('admin.feedback') }}">Feedback</a></li>
                         </ul>
                     </nav>
                 </div>

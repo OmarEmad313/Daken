@@ -26,8 +26,8 @@ class homeController extends Controller
             ]);
         }
         if($role=='1'){
-            return view('adminoffers.index',[
-                /* 'products' => products::all(), */
+            return view('adminProducts.index',[
+                 'products' => products::all(), 
             ]);
             
         }

@@ -17,7 +17,6 @@ class adminOfferConrtroller extends Controller
     {
         return view('adminOffers.index',[
             'offers' => offers::all(),
-            'test'=>'hi'
         ]);
     }
 
@@ -50,7 +49,7 @@ class adminOfferConrtroller extends Controller
         $offer->offerRatio=strip_tags($request->input('offer_ratio'));
 
         $offer->save();
-        return redirect()->back(); 
+        return redirect()->route('adminOffers.index');
     }
 
     /**
@@ -111,6 +110,6 @@ class adminOfferConrtroller extends Controller
         ->where('offerId','=',$id)
         ->delete();
 
-        return redirect('offers.index'); 
+        return redirect()->route('adminOffers.index');
     }
 }

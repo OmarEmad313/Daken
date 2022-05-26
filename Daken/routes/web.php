@@ -3,12 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\productController;
-use App\Http\Controllers\offersController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\adminOfferConrtroller;
 use App\Http\Controllers\adminProductController;
+use App\Http\Controllers\adminController;
 
 
 
@@ -43,17 +43,19 @@ Route::get('/categorySingle',[homeController::class,'categorySingle'] )->name('h
 
 
 Route::resource('products',productController::class);
-route::delete('products/destroy{id}',[productController::class,'destroy'])->name('product.destory');
 
-Route::resource('offers',offersController::class);
-route::delete('offers/destroy{id}',[offersController::class,'destroy'])->name('offers.destory');
 
 Route::resource('adminProducts',adminProductController::class);
 route::delete('adminProducts/destroy{id}',[adminProductController::class,'destroy'])->name('adminProduct.destory');
 
 
 Route::resource('adminOffers',adminOfferConrtroller::class);
+route::delete('adminOffers/destroy{id}',[adminOfferConrtroller::class,'destroy'])->name('adminOffers.destory');
 
+
+
+Route::get('/reservation',[adminController::class,'reservation'] )->name('admin.reservation');
+Route::get('/feedback',[adminController::class,'feedback'] )->name('admin.feedback');
 
 
 Route::middleware([
