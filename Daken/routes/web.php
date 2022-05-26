@@ -49,6 +49,8 @@ Route::resource('offers',offersController::class);
 route::delete('offers/destroy{id}',[offersController::class,'destroy'])->name('offers.destory');
 
 Route::resource('adminProducts',adminProductController::class);
+route::delete('adminProducts/destroy{id}',[adminProductController::class,'destroy'])->name('adminProduct.destory');
+
 
 Route::resource('adminOffers',adminOfferConrtroller::class);
 

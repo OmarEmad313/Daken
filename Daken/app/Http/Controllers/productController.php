@@ -84,6 +84,13 @@ class productController extends Controller
     public function edit($product)
     {
         //  get
+        $product2=DB::table('products')
+        ->where('productId','=',$product)
+        ->get();
+
+        return view('products.edit',[
+            'product'=>$product2
+        ]);
     }
 
     /**
@@ -96,6 +103,26 @@ class productController extends Controller
     public function update(Request $request, $product)
     {
         //  post   
+        $request->validate([
+            'product_name'=>'required',
+            'product_description'=>'required',
+            'product_price'=>['required','integer'],
+            'category'=>'required',
+        ]);
+        
+        $photoName=$request->file('productimage')->getClientOriginalName();
+        $records=DB::table('products')
+        ->where('productId','=',$product)
+        ->update([
+            'name'=>$request->input('product_name'),
+            'description'=>$request->input('product_description'),
+            'price'=>$request->input('product_price'),
+            'category'=>$request->input('category'),
+            'productsImage'=>$photoName
+        ]);
+        $request->file('productimage')->storeAs('public/img/',$photoName);
+        
+        return redirect()->route('adminProducts.index');  // or
     }
 
     /**

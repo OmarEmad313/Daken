@@ -19,7 +19,6 @@ class adminProductController extends Controller
         
         return view('adminProducts.index',[
             'products' => products::all(),
-            'test'=>'hi'
         ]);
     }
 
@@ -90,7 +89,7 @@ class adminProductController extends Controller
         ->where('productId','=',$product)
         ->get();
 
-        return view('products.edit',[
+        return view('adminProducts.edit',[
             'product'=>$product2
         ]);
     }
@@ -139,6 +138,6 @@ class adminProductController extends Controller
         ->where('productId','=',$id)
         ->delete();
         
-        return redirect()->route('products.index'); 
+        return redirect()->route('adminProducts.index'); 
     }
 }

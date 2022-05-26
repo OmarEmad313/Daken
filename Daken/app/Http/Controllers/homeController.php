@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\reviews;
+use App\Models\products;
 
 
 
@@ -25,7 +26,10 @@ class homeController extends Controller
             ]);
         }
         if($role=='1'){
-            return view('adminProducts.index');
+            return view('adminoffers.index',[
+                /* 'products' => products::all(), */
+            ]);
+            
         }
         
     }

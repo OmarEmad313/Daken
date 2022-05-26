@@ -1,5 +1,5 @@
 
-@extends('layout')
+@extends('admin_layout')
 
 @section('content')
 
@@ -11,7 +11,7 @@
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Product Form</h3>
 
-            <form method="POST" action="{{route('adminProductController.store') }} " enctype="multipart/form-data">
+            <form method="POST" action="{{route('adminProducts.store') }} " enctype="multipart/form-data">
                 @csrf
               <div class="row">
 

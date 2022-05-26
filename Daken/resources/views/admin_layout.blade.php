@@ -203,6 +203,7 @@
     <script src={{ url('js/mixitup.min.js')}}></script>
     <script src={{ url('js/owl.carousel.min.js')}}></script>
     <script src={{ url('js/main.js')}}></script>
+    <script src={{ url('js/admin.js')}}></script>
 
 </body>
 

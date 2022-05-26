@@ -1,7 +1,7 @@
 <!-- <input type="file" name="image"> 
 
 edit and create are the same -->
-@extends('layout')
+@extends('admin_layout')
 
 @section('content')
 
@@ -13,7 +13,7 @@ edit and create are the same -->
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Edit Offer Form</h3>
             @foreach ($offers as $offer)
-            <form method="POST" action="{{route('adminOfferConrtroller.update', ['offer'=>$offer->offerId] ) }} " enctype="multipart/form-data">
+            <form method="POST" action="{{route('adminOffers.update', ['offer'=>$offer->offerId] ) }} " enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
               <div class="row">
