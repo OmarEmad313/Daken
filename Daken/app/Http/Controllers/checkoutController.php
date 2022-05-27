@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\orders;
-
+use App\Models\carts;
+use App\Models\products;
 
 class checkoutController extends Controller
 {
@@ -73,6 +74,21 @@ class checkoutController extends Controller
 
         return redirect()->route('products.index');
        
+    }
+    public function addToCart(Request $request, $id){
+        
+        $product=DB::table('products')
+        ->where('productId','=',$id)
+        ->first();
+
+        
+
+        $carts=new carts();
+        $carts->userId=Auth::user()->id;
+        $carts->productId=$product->productId;
+        $carts->save();
+        return redirect()->route('products.index');
+
     }
 
     /**

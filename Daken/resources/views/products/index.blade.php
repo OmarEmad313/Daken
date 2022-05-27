@@ -116,13 +116,14 @@
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/'.$product['productsImage'] ) }}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <form action="{{ url('addToCart', $product->productId ) }}" method="post">
+                                            @csrf
+                                            <button type="submit"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
+                                        </form>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="{{ route('products.show', ['product'=>$product['productId']] ) }}">{{ $product['name'] }}</a></h6>
-                                    
-                                   <!--  <h6><a href="{{ route('products.destroy', $product->productId ) }}">{{ $product['name'] }}</a></h6> -->
+                                    <h6><a href="{{ route('products.show', ['product'=>$product['productId']] ) }}">{{ $product['name'] }}</a></h6>      
                                     <h5>{{ $product['price'] }}</h5>
                                 </div>
                             </div>

@@ -30,8 +30,8 @@ Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] )->name('home.
 Route::get('/shopingCart',[homeController::class,'shopingCart'] )->name('home.shopingCart');
 
 Route::resource('checkout',checkoutController::class );
+Route::post('/addToCart/{id}',[checkoutController::class,'addToCart'] )->name('checkout.addToCart');
 
-//Route::get('/contact',[homeController::class,'contact'] )->name('home.contact');
 
 Route::resource('contact',contactController::class );
 
