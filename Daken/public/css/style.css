@@ -3776,3 +3776,57 @@ table.table .avatar {
 	font-weight: normal;
 }
 /* ------------------------- */
+/* feedback admin page css */
+
+.body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 2.5rem;
+ 
+
+}
+.header  {  
+color: purple;
+font-size:3em;
+justify-content: center;
+padding: 1em;
+}
+.cards-slider{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.card {
+    border: 1px solid #333;
+    border-radius: 1.3em;
+    margin: 0 auto;
+    background-color: #9772FB;
+}
+.card-text-content {
+padding: 1rem;
+color: #FBF46D;
+
+}   
+.card-ID {
+font-size: 2em;
+padding:0rem 0.5rem ;
+color: #ffffff;
+}
+
+.swiper-container {
+    padding-bottom: 1rem;
+}
+
+.swiper-slide {
+    transform: scale(.94);
+    transition: transform .25s;
+}
+.read-more {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #333;
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+}
