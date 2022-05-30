@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                     <div class="section-title product__discount__title">
-      <h2>Oriental Items</h2></div>
+      <h2>Single Items</h2></div>
                         <div class="filter__found"></div>
                      
                     </div>
