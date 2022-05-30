@@ -20,16 +20,18 @@
    
     
       <!-- Western category Section Begin -->
-      <h2>Western Items</h2>
-
+      <div class="container">
             <div class="filter__item">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
+                    <div class="section-title product__discount__title">
+      <h2>Oriental Items</h2></div>
                         <div class="filter__found"></div>
+                     
                     </div>
                 </div>
             </div>
-            <div class="row">
+</div>
                 @foreach($record as $product)
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
@@ -42,11 +44,13 @@
                             <div class="product__item__text">
                                 <h6><a href="{{ route('products.show', ['product'=>$product->productId] ) }}">{{ $product->name }}</a></h6>
                                 <h5>{{ $product->price }}</h5>
-                            </div>
+                                </div>
                         </div>
                     </div>
+                    @endforeach
+</div>
+                    
             </div>
-            @endforeach
 
             <div class="filter__item">
                 <div class="row">

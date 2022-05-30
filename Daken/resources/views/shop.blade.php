@@ -59,7 +59,8 @@
                     </div>
                 </div>
  <!------------------------- ---------------------------(SALES PART)------------------------------------------------------- -->
-                <div class="col-lg-9 col-md-7">
+ <div class="container">              
+ <div class="col-lg-9 col-md-7">
                     <div class="product__discount">
                         <div class="section-title product__discount__title">
                             <h2>Sale Off</h2>
@@ -107,6 +108,7 @@
                             </div>
                         </div>
                     </div>
+                            </div>
                     <!-- Breadcrumb Section Begin -->
                     <section class="breadcrumb-section set-bg" data-setbg="img/pic7.JPG">
                         <div class="container">
