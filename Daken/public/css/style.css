@@ -3830,3 +3830,9 @@ color: #ffffff;
     padding: .5rem 1rem;
     border-radius: 3px;
 }
+
+.addToCart{
+	padding: 0;
+	border: none;
+	background: none;
+}

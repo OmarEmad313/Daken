@@ -135,4 +135,14 @@ class productController extends Controller
     {
        
     }
+
+    public function search()
+    {
+       $search_text=$_GET['query'];
+       $products=products::where('name','LIKE','%'.$search_text.'%')->get();
+
+       return view('products.show',[
+        'product'=>$products
+    ]);
+    }
 }

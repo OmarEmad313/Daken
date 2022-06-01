@@ -59,6 +59,7 @@ class checkoutController extends Controller
             'last_name'=>'required',
             'phone'=>'required',
             'email'=>'required',
+            'order_notes'=>'required',
         ]);
 
         $order=new orders();
@@ -72,22 +73,24 @@ class checkoutController extends Controller
         $order->orderNotes=strip_tags($request->input('order_notes'));
         $order->save();
 
+        $productRecord=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->delete();
+        
         return redirect()->route('products.index');
        
     }
-    public function addToCart(Request $request, $id){
+    public function addToCart($id){
         
         $product=DB::table('products')
         ->where('productId','=',$id)
         ->first();
 
-        
-
         $carts=new carts();
         $carts->userId=Auth::user()->id;
         $carts->productId=$product->productId;
         $carts->save();
-        return redirect()->route('products.index');
+        return redirect()->route('shoppingCart');
 
     }
 

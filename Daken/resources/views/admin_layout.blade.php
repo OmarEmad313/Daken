@@ -48,10 +48,7 @@
       </div>
       <div class="humberger__menu__cart">
           <ul>
-              <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-              <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
           </ul>
-          <div class="header__cart__price">item: <span>${{$total}}</span></div>
       </div>
       <div class="humberger__menu__widget">
           <div class="header__top__right__language">
@@ -66,8 +63,8 @@
           <ul>
               <li class="active"><a href="{{ route('home.index') }}">products</a></li>
               <li><a href="{{ route('products.index') }}">offers</a></li>
-              <li><a href="{{ route('contact.index') }}">Reservations</a></li>
-              <li><a href="{{ route('contact.index') }}">Feedback</a></li>
+              <li><a href="{{ route('admin.reservation') }}">Reservations</a></li>
+              <li><a href="{{ route('admin.feedback') }}">Feedback</a></li>
           </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -185,7 +182,7 @@
             <div class="col-lg-4 col-md-12">
                 <div class="footer__widget">
                     <h6>Join Our community Now</h6>
-                    <p>Get E-mail updates about our latest shop and special offers.</p>
+                    <p>Get E-mail updates about our latest shop </p> <p>and special offers.</p>
                    
                     <div class="footer__widget__social">
                         <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>

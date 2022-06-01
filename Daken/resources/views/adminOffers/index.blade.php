@@ -50,7 +50,7 @@
                                 <form action="{{ route('adminOffers.destroy', $offer->offerId ) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                   <a class="delete" > <button   type="submit" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button> </a> 
+                                   <a class="delete" > <button   class="addToCart" type="submit" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button> </a> 
                                 </form>
                             </td>
                         </tr> 

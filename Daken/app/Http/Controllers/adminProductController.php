@@ -133,7 +133,10 @@ class adminProductController extends Controller
      */
     public function destroy($id)
     {
-        
+        $offerRecord=DB::table('offers')
+        ->where('productId','=',$id)
+        ->delete();
+
         $record=DB::table('products')
         ->where('productId','=',$id)
         ->delete();
