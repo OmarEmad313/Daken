@@ -102,14 +102,28 @@ class productController extends Controller
      */
     public function update(Request $request, $product)
     {
-        //  post   
         $request->validate([
             'product_name'=>'required',
             'product_description'=>'required',
             'product_price'=>['required','integer'],
             'category'=>'required',
         ]);
-        
+        $photoName=$request->file('productimage');
+        if(!$photoName){
+            $records=DB::table('products')
+            ->where('productId','=',$product)
+            ->update([
+                'name'=>$request->input('product_name'),
+                'description'=>$request->input('product_description'),
+                'price'=>$request->input('product_price'),
+                'category'=>$request->input('category'),
+            ]);
+            
+            return redirect()->route('adminProducts.index')->with('sucMessage','product edited successfully');
+    
+    }  
+    else{
+       
         $photoName=$request->file('productimage')->getClientOriginalName();
         $records=DB::table('products')
         ->where('productId','=',$product)
@@ -122,9 +136,9 @@ class productController extends Controller
         ]);
         $request->file('productimage')->storeAs('public/img/',$photoName);
         
-        return redirect()->route('adminProducts.index');  // or
+        return redirect()->route('adminProducts.index')->with('sucMessage','product edited successfully');
     }
-
+    }
     /**
      * Remove the specified resource from storage.
      *

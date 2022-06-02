@@ -109,6 +109,12 @@ class checkoutController extends Controller
     }
     public function addToCart($id){
         
+        $cartProduct=DB::table('carts')
+        ->where('productId','=',$id)
+        ->where('userId','=',Auth::user()->id)
+        ->first();
+
+        if(!$cartProduct){
         $product=DB::table('products')
         ->where('productId','=',$id)
         ->first();
@@ -117,8 +123,11 @@ class checkoutController extends Controller
         $carts->userId=Auth::user()->id;
         $carts->productId=$product->productId;
         $carts->save();
-        return redirect()->route('shoppingCart');
-
+        return redirect()->route('shoppingCart')->with('sucMessage','product successfully added to the cart');
+        }
+        else{
+            return redirect()->route('products.index')->with('errorMessage','product already in the cart');
+        }
     }
 
     /**
