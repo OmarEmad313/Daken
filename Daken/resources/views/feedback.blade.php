@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedbacks</title>
-    
+    <!--  -->
   </head>
   <body>
     <header class="header">   
@@ -24,7 +24,7 @@
         <!-- Slides -->
 
         <div class="swiper-slide">
-          <div class="card">
+          <div class="card2">
             <div class="card-ID">
               <h2>Review Id: {{$review->reviewId}}</h2>
             </div>

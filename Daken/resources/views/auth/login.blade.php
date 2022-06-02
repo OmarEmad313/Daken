@@ -2,7 +2,7 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
             <!-- <x-jet-authentication-card-logo /> -->
-            <img src="img/dakenLogo.jpg" width="30%" height="30%" padding-left="40%">
+            <img src="img/dakenLogo.jpg" width="30%" height="30%" style="margin-left:35%">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

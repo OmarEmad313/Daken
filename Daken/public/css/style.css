@@ -3797,11 +3797,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 }
-.card {
+.card2 {
     border: 1px solid #333;
     border-radius: 1.3em;
     margin: 0 auto;
-    background-color: #9772FB;
+    background-color:  #9772FB;
 }
 .card-text-content {
 padding: 1rem;
