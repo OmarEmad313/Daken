@@ -144,7 +144,21 @@
        
     </header>
     
-
+    <div align="center" style="padding-top:1em;">
+        <div>
+            @if(session()->has('errorMessage'))
+                <div class="alert alert-danger" id="alert">
+                    {{session()->get('errorMessage')}}
+                </div>
+            @endif
+            
+            @if(session()->has('sucMessage'))
+                <div class="alert alert-success" id="alert">
+                    {{session()->get('sucMessage')}}
+                </div>
+            @endif
+        </div>
+      </div>
 
 
 
@@ -205,6 +219,17 @@
     <script src={{ url('js/owl.carousel.min.js')}}></script>
     <script src={{ url('js/main.js')}}></script>
     <script src={{ url('js/admin.js')}}></script>
+
+    <script type="text/javascript">
+        $("document").ready(function()
+        {
+            setTimeout(function()
+            {
+                $("div.alert").remove();
+            },5000);
+        }
+        );
+</script>
 
 </body>
 

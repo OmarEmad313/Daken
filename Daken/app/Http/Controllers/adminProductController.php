@@ -59,10 +59,9 @@ class adminProductController extends Controller
         $photoName=$request->file('productimage')->getClientOriginalName();
         $product->productsImage=strip_tags($photoName);
         $request->file('productimage')->storeAs('public/img/',$photoName);
-        //$request->file('productimage')->store('img', 'public');
 
         $product->save();
-        return redirect()->route('adminProducts.index');  // or
+        return redirect()->route('adminProducts.index')->with('sucMessage','product added successfully');
     }
 
     /**
@@ -141,6 +140,6 @@ class adminProductController extends Controller
         ->where('productId','=',$id)
         ->delete();
         
-        return redirect()->route('adminProducts.index'); 
+        return redirect()->route('adminProducts.index')->with('sucMessage','product deleted successfully'); 
     }
 }

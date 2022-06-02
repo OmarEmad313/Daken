@@ -55,12 +55,12 @@ class adminOfferConrtroller extends Controller
             $offer->offerRatio=strip_tags($request->input('offer_ratio'));
     
             $offer->save();
-            return redirect()->route('adminOffers.index');
+            return redirect()->route('adminOffers.index')->with('sucMessage','offer added successfully');
             
         }
 
         else {
-            return redirect()->route('adminOffers.index')->with('message','can not add an offer on an unavailble product');
+            return redirect()->route('adminOffers.index')->with('errorMessage','can not add an offer on an unavailble product');
         }
     }
 
@@ -83,13 +83,7 @@ class adminOfferConrtroller extends Controller
      */
     public function edit($offer)
     {
-        $offerRecord=DB::table('offers')
-        ->where('offerId','=',$offer)
-        ->get();
-
-        return view('adminOffers.edit',[
-            'offers'=>$offerRecord
-        ]);
+       
     }
 
     /**
@@ -101,13 +95,7 @@ class adminOfferConrtroller extends Controller
      */
     public function update(Request $request, $offer)
     {
-        $offerRecord=DB::table('offers')
-        ->where('offerId','=',$offer)
-        ->update([
-            'productId'=>$request->input('product_id'),
-            'offerRatio'=>$request->input('offer_ratio')
-        ]);
-        return redirect()->back(); 
+        
     }
 
     /**
@@ -122,6 +110,6 @@ class adminOfferConrtroller extends Controller
         ->where('offerId','=',$id)
         ->delete();
 
-        return redirect()->route('adminOffers.index');
+        return redirect()->route('adminOffers.index')->with('sucMessage','offer deleted successfully');
     }
 }
