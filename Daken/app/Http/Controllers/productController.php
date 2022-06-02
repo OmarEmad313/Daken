@@ -21,7 +21,7 @@ class productController extends Controller
         ->join('products','offers.productId','=','products.productId')
         ->select('offers.offerRatio as offerRatio','products.name as productName',
         'products.price as productPrice','products.category as productCategory',
-        'products.productsImage as productImage')
+        'products.productsImage as productImage','products.productId as productId')
         ->get();
 
         $count1 = products::count();

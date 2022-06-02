@@ -62,6 +62,20 @@ class checkoutController extends Controller
             'email'=>'required',
             'order_notes'=>'required',
         ]);
+
+        $total=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->join('products','carts.productId','=','products.productId')
+        ->sum('price');
+        // getting the items from the cart
+        $productRecord=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->get();
+
+
+        if($total==0){
+            return redirect()->route('products.index')->with('errorMessage','No items in the cart');
+        }
         // making the reservation
         $randNumber=rand();
         $order=new orders();
@@ -75,11 +89,6 @@ class checkoutController extends Controller
         $order->orderNotes=strip_tags($request->input('order_notes'));
         $order->save();
 
-
-        // getting the items from the cart
-        $productRecord=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->get();
 
         // linking the reservation with the products in cart
         for ($i=0; $i < $productRecord->count(); $i++) { 
@@ -96,8 +105,7 @@ class checkoutController extends Controller
         ->where('userId','=',Auth::user()->id)
         ->delete();
         
-        return redirect()->route('products.index');
-       
+        return redirect()->route('products.index')->with('sucMessage','reservation was added successfully');     
     }
     public function addToCart($id){
         

@@ -131,7 +131,12 @@ class adminProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {   
+
+        $cartRecord=DB::table('carts')
+        ->where('productId','=',$id)
+        ->delete();
+
         $offerRecord=DB::table('offers')
         ->where('productId','=',$id)
         ->delete();

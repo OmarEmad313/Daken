@@ -30,8 +30,6 @@
                                 <tr>
                                     <th class="shoping__product">Products</th>
                                     <th>Price</th>
-<!--                                 <th>Quantity</th>
-                                    <th>Total</th> -->
                                     <th>Delete</th>
                                 </tr>
                             </thead>
@@ -61,7 +59,7 @@
                                     <form action="{{ url('shoppingCart', $product->productId ) }}" method="POST">
                                         @csrf
                                         @method('delete')
-                                   <a class="delete"> <button type="submit" >   <span class="icon_close">  </span></button> </a>
+                                        <a class="delete" > <button  class="addToCart"  type="submit" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>  </a>
                                     </form>
                                        
                                     </td>
@@ -76,8 +74,6 @@
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
                         <a href="{{route('products.index')}}" class="primary-btn ">CONTINUE SHOPPING</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            delete Cart</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
