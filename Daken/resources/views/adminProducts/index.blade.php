@@ -10,7 +10,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap CRUD Data Table for Database with Modal Form</title>
 
   
   <body>
@@ -50,7 +49,7 @@
                                 <form action="{{ route('adminProducts.destroy', $product->productId ) }}" method="POST">
                                     @csrf
                                     @method('delete')
-                                   <a class="delete"> <button    type="submit" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>  </a>
+                                   <a class="delete"> <button  class="addToCart"  type="submit" ><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></button>  </a>
                                 </form>
                             </td>
                         </tr> 
@@ -62,5 +61,7 @@
 	
 </body>
 </html>
+
+
 
 @endsection() 

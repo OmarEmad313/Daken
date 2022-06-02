@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\orders;
 use App\Models\carts;
 use App\Models\products;
+use App\Models\orderedproducts;
 
 class checkoutController extends Controller
 {
@@ -61,9 +62,10 @@ class checkoutController extends Controller
             'email'=>'required',
             'order_notes'=>'required',
         ]);
-
+        // making the reservation
+        $randNumber=rand();
         $order=new orders();
-        $order->orderId=rand();
+        $order->orderId=$randNumber;
         $order->userId=Auth::user()->id;
         $order->branchId=0;
         $order->firstName=strip_tags($request->input('first_name'));
@@ -73,7 +75,24 @@ class checkoutController extends Controller
         $order->orderNotes=strip_tags($request->input('order_notes'));
         $order->save();
 
+
+        // getting the items from the cart
         $productRecord=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->get();
+
+        // linking the reservation with the products in cart
+        for ($i=0; $i < $productRecord->count(); $i++) { 
+            $record=new orderedproducts();
+            $record->orderId=$randNumber;
+            $record->userId=Auth::user()->id;
+            $record->productId=$productRecord[$i]->productId;
+            $record->save();
+        }
+        
+
+        // deleting all items from the cart
+        $productRecord2=DB::table('carts')
         ->where('userId','=',Auth::user()->id)
         ->delete();
         

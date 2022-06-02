@@ -18,6 +18,7 @@ class adminOfferConrtroller extends Controller
         return view('adminOffers.index',[
             'offers' => offers::all(),
         ]);
+       
     }
 
     /**
@@ -43,13 +44,24 @@ class adminOfferConrtroller extends Controller
             'offer_ratio'=>['required','integer'],   
         ]);
 
-        $offer=new offers();
-        $offer->offerId=rand();
-        $offer->productId=strip_tags($request->input('product_id'));
-        $offer->offerRatio=strip_tags($request->input('offer_ratio'));
+        $product2=DB::table('products')
+        ->where('productId','=',$request->input('product_id'))
+        ->first();
 
-        $offer->save();
-        return redirect()->route('adminOffers.index');
+        if ( $product2) {
+            $offer=new offers();
+            $offer->offerId=rand();
+            $offer->productId=strip_tags($request->input('product_id'));
+            $offer->offerRatio=strip_tags($request->input('offer_ratio'));
+    
+            $offer->save();
+            return redirect()->route('adminOffers.index');
+            
+        }
+
+        else {
+            return redirect()->route('adminOffers.index')->with('message','can not add an offer on an unavailble product');
+        }
     }
 
     /**

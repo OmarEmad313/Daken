@@ -17,6 +17,8 @@
 
     <!-- Slider main container -->
     <div class="cards-slider">
+    @foreach($reviews as $review)
+
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -24,50 +26,19 @@
         <div class="swiper-slide">
           <div class="card">
             <div class="card-ID">
-              <h2>ID here</h2>
+              <h2>Review Id: {{$review->reviewId}}</h2>
             </div>
 
             <div class="card-text-content">
-              <h3>Name here</h3>
-              <p>Here comes the description</p>
+              <h3>{{$review->userName}}</h3>
+              <p>{{$review->message}}</p>
             </div>
           </div>
         </div>
       </div>
-          <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
 
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-ID">
-              <h2>ID here</h2>
-            </div>
-
-            <div class="card-text-content">
-              <h3>Name here</h3>
-              <p>Here comes the description</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-
-        <div class="swiper-slide">
-          <div class="card">
-            <div class="card-ID">
-              <h2>ID here</h2>
-            </div>
-
-            <div class="card-text-content">
-              <h3>Name here</h3>
-              <p>Here comes the description</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    @endforeach
+     
       </div>
     </div>
   </body>
