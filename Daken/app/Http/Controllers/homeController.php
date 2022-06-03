@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 /* use Illuminate\Http\controllers\Auth; */
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use App\Models\reviews;
 use App\Models\products;
 
 

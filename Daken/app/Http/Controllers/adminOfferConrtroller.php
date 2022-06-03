@@ -41,14 +41,29 @@ class adminOfferConrtroller extends Controller
     {
         $request->validate([
             'product_id'=>['required','integer'],
-            'offer_ratio'=>['required','integer'],   
+            'offer_ratio'=>'required|numeric|gt:0' 
+            
+            /* ['required','integer'],   */
         ]);
 
         $product2=DB::table('products')
         ->where('productId','=',$request->input('product_id'))
         ->first();
 
-        if ( $product2) {
+        $offer=DB::table('offers')
+        ->where('productId','=',$request->input('product_id'))
+        ->first();
+
+        if ( !$product2) {
+            
+            return redirect()->route('adminOffers.index')->with('errorMessage','can not add an offer on an unavailble product');
+
+        }
+
+        else if($offer){
+            return redirect()->route('adminOffers.index')->with('errorMessage','offer already Exists');
+        }
+        else{
             $offer=new offers();
             $offer->offerId=rand();
             $offer->productId=strip_tags($request->input('product_id'));
@@ -58,52 +73,8 @@ class adminOfferConrtroller extends Controller
             return redirect()->route('adminOffers.index')->with('sucMessage','offer added successfully');
             
         }
-
-        else {
-            return redirect()->route('adminOffers.index')->with('errorMessage','can not add an offer on an unavailble product');
-        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($offer)
-    {
-       
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $offer)
-    {
-        
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $offerRecord=DB::table('offers')
