@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ url('css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ url('css/style.css')}}" type="text/css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   
 </head>
 
 <body>
@@ -61,7 +65,7 @@
               <li><a href="{{ route('products.index') }}">Shop</a></li>
               <li><a href="#">Pages</a>
                   <ul class="header__menu__dropdown">
-                      <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
+                      <li><a href="{{ route('shoppingCart') }}">Shopping Cart</a></li>
                       <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
                   </ul>
               </li>
@@ -133,7 +137,7 @@
                             <li><a href="{{ route('products.index') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="{{ route('home.shopingCart') }}">Shoping Cart</a></li>
+                                    <li><a href="{{ route('shoppingCart') }}">Shopping Cart</a></li>
                                     <li><a href="{{ route('checkout.index') }}">Check Out</a></li>
                                 </ul>
                             </li>
@@ -180,12 +184,12 @@
             <div class="col-lg-9">
                 <div class="hero__search">
                     <div class="hero__search__form">
-                        <form action="#">
+                        <form action="{{ url('/search') }}">
                             <div class="hero__search__categories">
                                 All Categories
                                 <!-- <span class="arrow_carrot-down"></span> -->
                             </div>
-                            <input type="text" placeholder="What do yo u need?">
+                            <input type="search" name="query" placeholder="What do yo u need?">
                             <button type="submit" class="site-btn">SEARCH</button>
                         </form>
                     </div>
@@ -207,7 +211,21 @@
 </section>  
 <!-- Hero Section End -->
 
-
+<div align="center" style="padding-top:1em;">
+        <div>
+            @if(session()->has('errorMessage'))
+                <div class="alert alert-danger" id="alert">
+                    {{session()->get('errorMessage')}}
+                </div>
+            @endif
+            
+            @if(session()->has('sucMessage'))
+                <div class="alert alert-success" id="alert">
+                    {{session()->get('sucMessage')}}
+                </div>
+            @endif
+        </div>
+      </div>
 
         @yield('content')
 
@@ -268,7 +286,18 @@
     <script src={{ url('js/mixitup.min.js')}}></script>
     <script src={{ url('js/owl.carousel.min.js')}}></script>
     <script src={{ url('js/main.js')}}></script>
+    <script src={{ url('js/admin.js')}}></script>
 
+    <script type="text/javascript">
+        $("document").ready(function()
+        {
+            setTimeout(function()
+            {
+                $("div.alert").remove();
+            },5000);
+        }
+        );
+    </script>
 </body>
 
 </html>

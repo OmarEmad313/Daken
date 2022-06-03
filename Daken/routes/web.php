@@ -14,7 +14,6 @@ use App\Http\Controllers\shoppingCartController;
 
 
 
-/* Route::get('/',[homeController::class,'index'] )->name('home.index'); */
 Route::get('/',function(){
     return view('auth/register');
 });
@@ -62,6 +61,8 @@ route::delete('/shoppingCart/{id}',[shoppingCartController::class,'destroy'])->n
 Route::get('/reservation',[adminController::class,'reservation'] )->name('admin.reservation');
 Route::get('/feedback',[adminController::class,'feedback'] )->name('admin.feedback');
 
+
+Route::get('/search',[productController::class,'search']);
 
 Route::middleware([
     'auth:sanctum',

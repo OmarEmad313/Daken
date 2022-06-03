@@ -7,7 +7,7 @@
               <div class="hero__text">
                
                 <h2>Count memories not calories</h2>
-                <a href="#" class="primary-btn">Reserve Now for free</a>  
+                <a href="{{route('products.index')}}" class="primary-btn">Reserve Now for free</a>  
               </div>
             </div>
 
@@ -15,17 +15,26 @@
 <div class="testimonial">
     <div id="demo" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          @foreach($reviews as $review) 
-            <div class="carousel-item active">   
+          
+            <div class="carousel-item active"> 
                 <div class="carousel-caption">
-                    <p>"{{$review->message}}"</p> <!-- <img src="{{ url('img/konafa.gif')}}"> -->
+                    <p>"Reviews"</p> <!-- <img src="{{ url('img/konafa.gif')}}"> -->
+              </div>
+              @foreach($reviews as $review) 
+              <div class="carousel-item">
+                <div class="carousel-caption">
+                    <p>"{{$review->message}}"</p> <img src="{{ url('img/baklwa.jpg')}}" class="img-fluid">
                     <div id="image-caption">{{$review->name}}</div>
                 </div>
+              </div>
+              @endforeach      
             </div>
-          @endforeach
-           
+         
+            
         </div> <a class="carousel-control-prev" href="#demo" data-slide="prev"> <i >< </i> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <i >></i> </a>
+      
     </div>
+    
 </div>
 
 
@@ -34,7 +43,7 @@
 
 
     <!-- Categories Section Begin -->
-    <section class="categories">
+    <!-- <section class="categories">
       <div class="container">
         <div class="row">
           <div class="categories__slider owl-carousel">
@@ -82,26 +91,8 @@
         </div>
       </div>
     </section>
-    <!-- Categories Section End -->
+     --><!-- Categories Section End -->
 
  
-    <!-- Banner Begin -->
-    <div class="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="banner__pic">
-              <img src="img/banner/banner-1.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="banner__pic">
-              <img src="img/banner/banner-2.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Banner End -->
 
     @endsection()

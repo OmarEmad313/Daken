@@ -66,8 +66,11 @@
                                                 data-setbg="{{ asset('/img/'.$offer->productImage) }}">
                                                 <div class="product__discount__percent">-{{ $offer->offerRatio }}</div>
                                                 <ul class="product__item__pic__hover">
-                                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                                    <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li> -->
+                                                    <form action="{{ url('addToCart', $offer->productId ) }}" method="post">
+                                                        @csrf
+                                                        <button type="submit" class="addToCart"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
+                                                    </form>
                                                 </ul>
                                             </div>
                                             <div class="product__discount__item__text">
@@ -89,7 +92,7 @@
                                     <div class="breadcrumb__text">
                                         <h2>Products</h2>
                                         <div class="breadcrumb__option">
-                                            <a href="./index.html">Home</a>
+                                            <a href="{{ route('home.index') }}">Home</a>
                                             <span>Shop</span>
                                         </div>
                                     </div>
@@ -115,10 +118,10 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/'.$product['productsImage'] ) }}">
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li> -->
                                         <form action="{{ url('addToCart', $product->productId ) }}" method="post">
                                             @csrf
-                                            <button type="submit"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
+                                            <button type="submit" class="addToCart"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
                                         </form>
                                     </ul>
                                 </div>
