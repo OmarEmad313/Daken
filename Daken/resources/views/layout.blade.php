@@ -45,8 +45,7 @@
       </div>
       <div class="humberger__menu__cart">
           <ul>
-              <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-              <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
+              <li><a href="{{route('shoppingCart')}}"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
           </ul>
           <div class="header__cart__price">item: <span>${{$total}}</span></div>
       </div>
@@ -55,8 +54,11 @@
               <img src="img/language.png" alt="">
               <div>English</div>
           </div>
-          <div class="header__top__right__auth">
-              <a href="#"><i class="fa fa-user"></i> logout</a>
+            <div class="header__top__right__auth">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"> <a ><i class="fa fa-user"></i> Logout</a></button>
+            </form>
           </div>
       </div>
       <nav class="humberger__menu__nav mobile-menu">
@@ -111,10 +113,12 @@
                             <div class="header__top__right__language">
                                 <img src="img/language.png" alt="">
                                 <div>English</div>
-                                <!-- <span class="arrow_carrot-down"></span> -->
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Logout</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                               <button type="submit"> <a ><i class="fa fa-user"></i> Logout</a></button>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -148,8 +152,7 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-                            <li><a href="./shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
+                            <li><a href="{{route('shoppingCart')}}"><i class="fa fa-shopping-bag"></i> <span>{{$cartNumber}}</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>${{$total}}</span></div>
                     </div>
@@ -187,7 +190,6 @@
                         <form action="{{ url('/search') }}">
                             <div class="hero__search__categories">
                                 All Categories
-                                <!-- <span class="arrow_carrot-down"></span> -->
                             </div>
                             <input type="search" name="query" placeholder="What do yo u need?">
                             <button type="submit" class="site-btn">SEARCH</button>
@@ -262,10 +264,7 @@
                 <div class="footer__widget">
                     <h6>Join Our community Now</h6>
                     <p>Get E-mail updates about our latest shop and special offers.</p>
-                    <form action="#">
-                        <input type="text" placeholder="Enter your mail">
-                        <button type="submit" class="site-btn">Subscribe</button>
-                    </form>
+                    
                     <div class="footer__widget__social">
                         <a href=" https://www.facebook.com/DakenEG"><i class="fa fa-facebook"></i></a>
                         <a href="https://instagram.com/dakeneg?utm_medium=copy_link"><i class="fa fa-instagram"></i></a>

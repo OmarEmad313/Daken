@@ -51,6 +51,8 @@ class homeController extends Controller
     }
     
     //////////////////////////////////////////////////
+
+    
     public function categoryWestern () {
         $westernItems=DB::table('products')
         ->where('category','=','wastern items')

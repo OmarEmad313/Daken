@@ -10,16 +10,17 @@ class adminController extends Controller
 {
     
     public function reservation () {
-        $reservationRecord=DB::table('orders')
-        ->join('carts','carts.userId','=','orders.userId')
-        ->join('products','products.productId','=','carts.productId')
+        $reservationRecords=DB::table('orders')
+        /* ->join('orderedproducts','orderedproducts.userId','=','orders.userId') */
+        ->join('orderedproducts','orderedproducts.orderId','=','orders.userId')
+        ->join('products','products.productId','=','orderedproducts.productId')
         ->select('orders.firstName as firstName','orders.lastName as lastName',
         'orders.phone as phone','orders.reservationMail as reservationMail',
-        'orders.orderNotes as orderNotes','products.name as name')
+        'orders.orderNotes as orderNotes','orders.created_at as time','products.name as name')
         ->get();
 
         return view('reservation',[
-            'reservations'=>$reservationRecord,
+            'reservations'=>$reservationRecords,
         ]);
     }
 

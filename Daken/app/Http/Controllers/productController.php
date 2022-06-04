@@ -49,7 +49,6 @@ class productController extends Controller
         ->where('productId','=',$product)
         ->get();
 
-        //$product=products::findOrFail($product);
 
         return view('products.show',[
             'product'=>$product

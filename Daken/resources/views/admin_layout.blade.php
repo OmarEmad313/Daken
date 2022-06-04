@@ -56,7 +56,10 @@
               <div>English</div>
           </div>
           <div class="header__top__right__auth">
-              <a href="#"><i class="fa fa-user"></i> logout</a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit"> <a ><i class="fa fa-user"></i> Logout</a></button>
+            </form>
           </div>
       </div>
       <nav class="humberger__menu__nav mobile-menu">
@@ -109,7 +112,10 @@
                                 <!-- <span class="arrow_carrot-down"></span> -->
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Logout</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                               <button type="submit"> <a ><i class="fa fa-user"></i> Logout</a></button>
+                            </form>
                             </div>
                         </div>
                     </div>

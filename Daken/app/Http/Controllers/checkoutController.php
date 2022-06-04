@@ -53,15 +53,10 @@ class checkoutController extends Controller
             'order_notes'=>'required',
         ]);
 
-        $total=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->join('products','carts.productId','=','products.productId')
-        ->sum('price');
-        // getting the items from the cart
-        $productRecord=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->get();
+        $total=$this->total();
 
+        // getting the items from the cart
+        $productRecord=$this->cartItems();
 
         if($total==0){
             return redirect()->route('products.index')->with('errorMessage','No items in the cart');
@@ -79,7 +74,6 @@ class checkoutController extends Controller
         $order->orderNotes=strip_tags($request->input('order_notes'));
         $order->save();
 
-
         // linking the reservation with the products in cart
         for ($i=0; $i < $productRecord->count(); $i++) { 
             $record=new orderedproducts();
@@ -89,15 +83,32 @@ class checkoutController extends Controller
             $record->save();
         }
         
-
         // deleting all items from the cart
-        $productRecord2=DB::table('carts')
-        ->where('userId','=',Auth::user()->id)
-        ->delete();
+        $this->delete();
         
         return redirect()->route('products.index')->with('sucMessage','reservation was added successfully');     
     }
 
+
+    public function total(){
+        $total=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->join('products','carts.productId','=','products.productId')
+        ->sum('price');
+        return $total;
+    }
+    public function cartItems(){
+        $productRecord=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->get();
+        return $productRecord;
+    }
+
+    public function delete(){
+        $productRecord2=DB::table('carts')
+        ->where('userId','=',Auth::user()->id)
+        ->delete();
+    }
     public function addToCart($id){
         
         $cartProduct=DB::table('carts')
