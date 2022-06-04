@@ -25,7 +25,7 @@
                         @csrf
                         <button type="submit" class="addToCart"><a class="primary-btn">ADD TO CART</a></button>
                         </form>
-                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
                             <li><b>Category</b> <span>{{ $product->category }}</span></li>

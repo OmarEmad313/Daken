@@ -66,7 +66,6 @@
                                                 data-setbg="{{ asset('/img/'.$offer->productImage) }}">
                                                 <div class="product__discount__percent">-{{ $offer->offerRatio }}</div>
                                                 <ul class="product__item__pic__hover">
-                                                    <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li> -->
                                                     <form action="{{ url('addToCart', $offer->productId ) }}" method="post">
                                                         @csrf
                                                         <button type="submit" class="addToCart"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
@@ -75,7 +74,7 @@
                                             </div>
                                             <div class="product__discount__item__text">
                                                 <span>{{ $offer->productCategory }}</span>
-                                                <h5><a href="#">{{ $offer->productName }}</a></h5>
+                                                <h5><a href="{{ route('products.show', ['product'=>$offer->productId] ) }}">{{ $offer->productName }}</a></h5>
                                                 <div class="product__item__price">${{$newPrice}} <span>${{ $offer->productPrice }}</span></div>
                                             </div>
                                         </div>

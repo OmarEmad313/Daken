@@ -59,8 +59,9 @@
     <!-- Map Begin -->
     <div class="map">
         <iframe
-            src="https://www.google.com/maps/dir/30.006115,31.4570441/30.0822987,31.3385315/@30.0498761,31.3394429,12.46z/data=!4m4!4m3!1m1!4e1!1m0"
-            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            src="img/map2.JPG"
+            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
@@ -88,26 +89,7 @@
             
             <form method="POST" action="{{route('contact.store') }}">
                 @csrf
-               <!--  <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                    <label class="form-label" for="first_name"> First Name</label>
-                    <input type="text" id="first_name" name="first_name" class="form-control form-control-lg " value="{{ old('first_name')}}" />
-                        @error('first_name')
-                            <div class="form-error">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <label class="form-label" for="email">  Email</label>
-                        <input type="text" id="email" name="email" class="form-control form-control-lg " value="{{ old('email')}}" />
-                            @error('email')
-                                <div class="form-error">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                    </div> -->
+               
                     <div class="col-lg-12 text-center">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control form-control-lg" id="message" name="message" value="{{ old('message')}}"> </textarea>
