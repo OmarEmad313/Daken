@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\productController;
-use App\Http\Controllers\userController;
 use App\Http\Controllers\checkoutController;
 use App\Http\Controllers\contactController;
 use App\Http\Controllers\adminOfferConrtroller;
@@ -18,12 +17,12 @@ Route::get('/',function(){
     return view('auth/register');
 });
 
-Route::get('redirects',[homeController::class,'index'],[userController::class,'index'] )->name('home.index');
+Route::get('redirects',[homeController::class,'index'] )->name('home.index');
 
 
-Route::get('/shop',[homeController::class,'shop'] )->name('home.shop');
+// Route::get('/shop',[homeController::class,'shop'] )->name('home.shop');
 
-Route::get('/aboutus',[homeController::class,'aboutus'],[userController::class,'index'] )->name('home.aboutus');
+Route::get('/aboutus',[homeController::class,'aboutus'] )->name('home.aboutus');
 
 Route::get('/aboutOurShop',[homeController::class,'aboutOurShop'] )->name('home.aboutOurShop');
 

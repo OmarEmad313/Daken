@@ -28,7 +28,7 @@
                                     <div class="latest-prdouct__slider__item">
                                            @foreach ($products as $product)
                                                 @if($loop->index>$count -6)
-                                                    <a href="#" class="latest-product__item">
+                                                    <a href="{{ route('products.show', ['product'=>$product->productId] ) }}" class="latest-product__item">
                                                     <div class="latest-product__item__pic">
                                                         <img src="{{ asset('/img/'.$product['productsImage'] ) }}" width="70px" height="70px" alt="Image" >
                                                     </div>
@@ -117,7 +117,6 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/'.$product['productsImage'] ) }}">
                                     <ul class="product__item__pic__hover">
-                                        <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li> -->
                                         <form action="{{ url('addToCart', $product->productId ) }}" method="post">
                                             @csrf
                                             <button type="submit" class="addToCart"> <li><a ><i class="fa fa-shopping-cart"></i></a></li> </button>
@@ -137,7 +136,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-
+                                    <h6><span>{{$count}}</span> Products found</h6>
                                 </div>
                             </div>
                         </div>

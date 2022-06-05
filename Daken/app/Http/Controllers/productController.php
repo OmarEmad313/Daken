@@ -25,6 +25,7 @@ class productController extends Controller
         ->get();
 
         $count1 = products::count();
+        
         return view('products.index',[
             'products' => products::all(),  
             'offers'=>$offer,
