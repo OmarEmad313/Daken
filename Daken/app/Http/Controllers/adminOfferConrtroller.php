@@ -43,7 +43,7 @@ class adminOfferConrtroller extends Controller
             'product_id'=>['required','integer'],
             'offer_ratio'=>'required|numeric|gt:0' 
             
-            /* ['required','integer'],   */
+            
         ]);
 
         $product2=DB::table('products')
@@ -61,7 +61,13 @@ class adminOfferConrtroller extends Controller
         }
 
         else if($offer){
-            return redirect()->route('adminOffers.index')->with('errorMessage','offer already Exists');
+            /* return redirect()->route('adminOffers.index')->with('errorMessage','offer already Exists'); */
+            $records=DB::table('offers')
+            ->where('offerId','=',$offer->offerId)
+            ->update([
+                'offerRatio'=>$request->input('offer_ratio'),
+            ]);
+            return redirect()->route('adminOffers.index')->with('sucMessage','offer updated successfully');
         }
         else{
             $offer=new offers();

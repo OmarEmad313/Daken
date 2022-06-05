@@ -34,9 +34,7 @@ class homeController extends Controller
     }
 
 
-    public function shop () {
-        return view('shop');
-    }
+    
 
     public function aboutus () {
         return view('aboutus');
@@ -46,9 +44,9 @@ class homeController extends Controller
         return view('aboutOurShop');
     }
     
-    public function shopingCart () {
+    /* public function shopingCart () {
         return view('shopingCart');
-    }
+    } */
     
     //////////////////////////////////////////////////
 

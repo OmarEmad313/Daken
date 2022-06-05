@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\products;
+
 use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
@@ -12,11 +11,11 @@ class adminController extends Controller
     public function reservation () {
         $reservationRecords=DB::table('orders')
         /* ->join('orderedproducts','orderedproducts.userId','=','orders.userId') */
-        ->join('orderedproducts','orderedproducts.orderId','=','orders.userId')
+        ->join('orderedproducts','orderedproducts.orderId','=','orders.orderId')
         ->join('products','products.productId','=','orderedproducts.productId')
-        ->select('orders.firstName as firstName','orders.lastName as lastName',
+        ->select('orders.firstName as firstName','orders.orderId as orderId',
         'orders.phone as phone','orders.reservationMail as reservationMail',
-        'orders.orderNotes as orderNotes','orders.created_at as time','products.name as name')
+        'orders.orderNotes as orderNotes','orders.created_at as time','products.name as productName')
         ->get();
 
         return view('reservation',[
